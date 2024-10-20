@@ -15,27 +15,25 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
+        <header class="bg-white shadow">
+            <div class="container mx-auto flex justify-between items-center py-6 px-4">
+                <h1 class="text-4xl font-bold"><a href="{{ route('home') }}" class="hover:underline">Artesanos del Código</a></h1>
+                @if (auth()->check())
+                    <livewire:layout.navigation />
+                @else
+                    <livewire:layout.public_navigation /> 
+                @endif
+
+            </div>
+        </header>
         <div class="min-h-screen bg-primary text-black/50 dark:text-white/50">
-            @if (auth()->check())
-                <livewire:layout.navigation />
-            @else
-                <livewire:layout.public_navigation /> 
-            @endif
-            
-
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
             <!-- Page Content -->
             <main>
                 {{ $slot }}
+
+                <livewire:layout.footer />
             </main>
+         
         </div>
     </body>
 </html>

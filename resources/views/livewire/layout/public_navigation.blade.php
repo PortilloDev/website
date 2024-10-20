@@ -6,23 +6,20 @@
                 <!-- Logo -->
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
-                        {{ __('Home') }}
+                    <x-nav-link :href="route('product')" :active="request()->routeIs('product')" wire:navigate>
+                        {{ __('Productos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('podcast')" :active="request()->routeIs('podcast')" wire:navigate>
+                        {{ __('Podcast') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('blog')" :active="request()->routeIs('blog')" wire:navigate>
+                        {{ __('blog') }}
                     </x-nav-link>
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')" wire:navigate>
                         {{ __('Sobre Mi') }}
                     </x-nav-link>
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
                         {{ __('Contacto') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('proyect')" :active="request()->routeIs('proyect')" wire:navigate>
-                        {{ __('Proyectos') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('product')" :active="request()->routeIs('product')" wire:navigate>
-                        {{ __('Productos') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('crafters_code')" :active="request()->routeIs('crafters_code')" wire:navigate>
-                        {{ __('Crafters & Code') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -51,14 +48,14 @@
             <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
                 {{ __('Contacto') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('proyect')" :active="request()->routeIs('proyect')" wire:navigate>
-                {{ __('Proyectos') }}
+            <x-responsive-nav-link :href="route('blog')" :active="request()->routeIs('blog')" wire:navigate>
+                {{ __('Blog') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('product')" :active="request()->routeIs('product')" wire:navigate>
                 {{ __('Productos') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('crafters_code')" :active="request()->routeIs('crafters_code')" wire:navigate>
-                {{ __('Crafters & Code') }}
+            <x-responsive-nav-link :href="route('podcast')" :active="request()->routeIs('podcast')" wire:navigate>
+                {{ __('Podcast') }}
             </x-responsive-nav-link>
         </div>
     </div>

@@ -21,9 +21,9 @@ Route::view('profile', 'profile')
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/sobre-mi', [AboutController::class, 'index'])->name('about');
 Route::get('/productos', [ProductController::class, 'index'])->name('product');
-Route::get('/proyectos', [ProyectController::class, 'index'])->name('proyect');
+Route::get('/blog', [ProyectController::class, 'index'])->name('blog');
 Route::get('/contacto', [ContactController::class, 'index'])->name('contact');
-Route::get('/crafters-code', [CraftersCodeController::class, 'index'])->name('crafters_code');
+Route::get('/podcast', [CraftersCodeController::class, 'index'])->name('podcast');
 
 Route::view('welcome', 'welcome');
 

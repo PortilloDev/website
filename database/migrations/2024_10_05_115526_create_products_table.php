@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('title'); 
             $table->longText('description');
-            $table->foreignId('product_type_id')->constrained('product_types')->onDelete('cascade');
+            $table->foreignId('product_type_id')->constrained('product_types')->onDelete('cascade')->nullable();
             $table->string('url')->nullable();
             $table->string('image');
+            $table->decimal('price', 8, 2)->nullable();
             $table->string('slug');
+            $table->string('type');
             $table->timestamps();
         });
     }

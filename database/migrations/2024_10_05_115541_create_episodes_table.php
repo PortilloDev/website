@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('embedded')->nullable();
             $table->string('url')->nullable();
             $table->string('image');
+            $table->date('release_date');
             $table->string('slug');
             $table->timestamps();
         });
