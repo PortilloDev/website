@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -28,6 +29,8 @@ class ProductResource extends Resource
             ->schema([
                 static::getTitleFormField(),
                 static::getDescriptionFormField(),
+                static::getSummaryFormField(),
+                static::getThemesFormField(),
                 static::getProductTypeFormField(),
                 static::getUrlFormField(),
                 static::getImageFormField(),
@@ -61,16 +64,36 @@ class ProductResource extends Resource
         ])
         ->required();
     }
-    public static function getDescriptionFormField(): Forms\Components\TextInput
+    public static function getDescriptionFormField(): Forms\Components\Textarea
     {
-        return TextInput::make('description')
+        return Textarea::make('description')
             ->required()
-            ->live();
+            ->autosize()
+            ->minLength(2)
+            ->maxLength(1024);
+    }
+
+    public static function getSummaryFormField(): Forms\Components\Textarea
+    {
+        return Textarea::make('summary')
+            ->required()
+            ->autosize()
+            ->minLength(2)
+            ->maxLength(1024);
+    }
+
+    public static function getThemesFormField(): Forms\Components\Textarea
+    {
+        return Textarea::make('themes')
+            ->required()
+            ->autosize()
+            ->minLength(2)
+            ->maxLength(1024);
     }
 
     public static function getImageFormField(): Forms\Components\FileUpload
     {
-        return FileUpload::make('image')
+        return FileUpload::make('image_url')
             ->required();
     }
 
@@ -95,7 +118,8 @@ class ProductResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->slideOver(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -12,12 +12,14 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Open Sans', 'sans-serif'],
             },
             colors: {
-                primary: '#547ca2',
-                secondary: '#80a2c3',
-                accent: '#B5CBE1',
+                primary: '#f8f4f4', // blanco
+                secondary: '#b5cbe1', // Azul claro
+                light: '#fadb78', // Amarillo claro
+                yellow_strong: '#d7b64b',// Amarillo fuerte
+                blue_button: '#547ca2', // Azul botón
               },
         },
     },

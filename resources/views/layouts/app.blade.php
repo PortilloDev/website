@@ -10,19 +10,24 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM0sFf84ohLe6I0WgOycVi/3OxczQ8p2g8pY5B7" crossorigin="anonymous">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles
     </head>
     <body class="font-sans antialiased">
-        <header class="bg-white shadow">
+        <header class="bg-secondary shadow">
             <div class="container mx-auto flex justify-between items-center py-6 px-4">
                 <h1 class="text-4xl font-bold"><a href="{{ route('home') }}" class="hover:underline">Artesanos del Código</a></h1>
+                <livewire:layout.public_navigation />
                 @if (auth()->check())
                     <livewire:layout.navigation />
-                @else
-                    <livewire:layout.public_navigation /> 
                 @endif
+
+
+
 
             </div>
         </header>
@@ -33,7 +38,9 @@
 
                 <livewire:layout.footer />
             </main>
-         
+
         </div>
+        @vite('resources/js/app.js')
+        @livewireScripts
     </body>
 </html>

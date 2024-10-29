@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-secondary border-b border-gray-100 text-black">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -12,8 +12,8 @@
                     <x-nav-link :href="route('podcast')" :active="request()->routeIs('podcast')" wire:navigate>
                         {{ __('Podcast') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('blog')" :active="request()->routeIs('blog')" wire:navigate>
-                        {{ __('blog') }}
+                    <x-nav-link href="https://notasweb.me" target="_blank">
+                        {{ __('Blog - Notas Web') }}
                     </x-nav-link>
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')" wire:navigate>
                         {{ __('Sobre Mi') }}
@@ -48,8 +48,8 @@
             <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
                 {{ __('Contacto') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('blog')" :active="request()->routeIs('blog')" wire:navigate>
-                {{ __('Blog') }}
+            <x-responsive-nav-link href="https://notasweb.me" target="_blank">
+                {{ __('Blog - Notas Web') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('product')" :active="request()->routeIs('product')" wire:navigate>
                 {{ __('Productos') }}

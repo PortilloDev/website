@@ -10,12 +10,12 @@ class Comment extends Model
     use HasFactory;
     protected $fillable = ['content', 'user_id'];
 
-    public function commentable()
+    public function commentable(): \Illuminate\Database\Eloquent\Relations\MorphTo
     {
         return $this->morphTo();
     }
 
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }

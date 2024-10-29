@@ -6,6 +6,7 @@ use App\Filament\Resources\EpisodeResource\Pages;
 use App\Filament\Resources\EpisodeResource\RelationManagers;
 use App\Models\Episode;
 use Filament\Forms;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -17,7 +18,7 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TimePicker;
 use Str;
-
+use TomatoPHP\FilamentDocs\Filament\Actions\DocumentAction;
 class EpisodeResource extends Resource
 {
     protected static ?string $model = Episode::class;
@@ -50,11 +51,13 @@ class EpisodeResource extends Resource
         return TextInput::make('url')
             ->live();
     }
-    public static function getDescriptionFormField(): Forms\Components\TextInput
+    public static function getDescriptionFormField(): DocumentAction
     {
-        return TextInput::make('description')
-            ->required()
-            ->live();
+        return DocumentAction::make('description')
+            ->vars(fn($record) => [
+                DocsVar::make('description')
+                    ->value($record->description),
+            ]);
     }
 
     public static function getImageFormField(): Forms\Components\FileUpload
@@ -87,7 +90,8 @@ class EpisodeResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                ->slideOver(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
