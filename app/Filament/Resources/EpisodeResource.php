@@ -6,11 +6,14 @@ use App\Filament\Resources\EpisodeResource\Pages;
 use App\Filament\Resources\EpisodeResource\RelationManagers;
 use App\Models\Episode;
 use Filament\Forms;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -29,62 +32,30 @@ class EpisodeResource extends Resource
     {
         return $form
             ->schema([
-                static::getTitleFormField(),
-                static::getUrlFormField(),
-                static::getDescriptionFormField(),
-                static::getImageFormField(),
-                static::getEmbeddedFormField(),
-                static::getReleaseDateFormField(),
+                Card::make()->schema([
+                    Forms\Components\TextInput::make('title')->reactive()
+                        ->afterStateUpdated(function ($set, $state) {
+                            $set('slug', \Illuminate\Support\Str::slug($state));
+                        })->required(),
+                    Forms\Components\TextInput::make('slug')->required(),
+                    Forms\Components\TextInput::make('url')->label('URL')->url()->required(),
+                    Forms\Components\TextInput::make('embedded')->label('Código embebido')->required(),
+                    Forms\Components\RichEditor::make('description')->required(),
+                    Forms\Components\RichEditor::make('embed_code')->required(),
+                    Forms\Components\FileUpload::make('image')->label('Imagen episodio')->required(),
+                    DateTimePicker::make('release_date')->label('Fecha de publicación')->required(),
+                    Select::make('tags')->label('Etiquetas')->multiple()->relationship('tags', 'name')->preload(),
+                ]),
             ]);
     }
 
-    public static function getTitleFormField(): Forms\Components\TextInput
-    {
-        return TextInput::make('title')
-            ->required()
-            ->live()
-            ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state)));
-    }
-
-    public static function getUrlFormField(): Forms\Components\TextInput
-    {
-        return TextInput::make('url')
-            ->live();
-    }
-    public static function getDescriptionFormField(): DocumentAction
-    {
-        return DocumentAction::make('description')
-            ->vars(fn($record) => [
-                DocsVar::make('description')
-                    ->value($record->description),
-            ]);
-    }
-
-    public static function getImageFormField(): Forms\Components\FileUpload
-    {
-        return FileUpload::make('image')
-            ->required();
-    }
-
-    public static function getEmbeddedFormField(): Forms\Components\TextInput
-    {
-        return TextInput::make('embedded');
-    }
-
-    public static function getReleaseDateFormField(): Forms\Components\DateTimePicker
-    {
-        return DateTimePicker::make('release_date')
-            ->required();
-    }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('url'),
-                Tables\Columns\TextColumn::make('image'),
+                TextColumn::make('title')->label('Título')->sortable()->searchable(),
+                TextColumn::make('release_date')->label('Publicado')->dateTime('d/m/Y'),
             ])
             ->filters([
                 //

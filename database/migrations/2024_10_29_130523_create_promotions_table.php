@@ -17,6 +17,8 @@ return new class extends Migration
             $table->text('description');
             $table->text('embed_code')->nullable();
             $table->string('slug')->unique();
+            $table->string('type'); // Por ejemplo: 'Instagram', 'Facebook', 'Blog'
+            $table->string('image');
             $table->timestamps();
         });
     }

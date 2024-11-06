@@ -26,5 +26,8 @@
             @endforeach
 
         </section>
+
+        <!-- Formulario de Suscripción al Newsletter -->
+        <x-newsletter-form :source="$source" :tags="$tags" :episode="$episode" />
     </main>
 </x-app-layout>

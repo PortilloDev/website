@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Public\AboutController;
 use App\Http\Controllers\Public\ContactController;
+use App\Http\Controllers\Public\LegalController;
 use App\Http\Controllers\Public\PodcastController;
 use App\Http\Controllers\Public\PromotionController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,12 @@ Route::get('/podcast/episodio/{slug}', [PodcastController::class, 'show'])->name
 Route::post('/newsletter', [NewsletterController::class, 'create'])->name('newsletter');
 Route::get('/promocion/{slug}', [PromotionController::class, 'show'])->name('promotions.show.blade.php');
 Route::get('/subscriber', [NewsletterController::class, 'index'])->name('subscriber');
+
+Route::get('/legal/cookies', [LegalController::class, 'cookies'])->name('cookies');
+Route::get('/legal/privacy', [LegalController::class, 'privacy'])->name('privacy');
+Route::get('/legal/conditions', [LegalController::class, 'conditions'])->name('conditions');
+
+Route::get('/thankyou', [NewsletterController::class, 'thanks'])->name('thankyou');
 
 Route::view('welcome', 'welcome');
 

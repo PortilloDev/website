@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Public;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\ProductType;
+use App\Models\Tag;
 use App\Service\ProductService\ListProductsService;
 use App\Service\ProductService\ProductInfoService;
 use App\Service\ProductTypeService\ListProductTypeService;
@@ -26,18 +27,29 @@ class ProductController extends Controller
     public function index()
     {
         $types = $this->listProductTypeService->all();
-        $uploadProducts = $this->listProductsService->listProductsByProductType(ProductType::PRODUCT_TYPE_UPLOAD);
-        $ebookProducts = $this->listProductsService->listProductsByProductType(ProductType::PRODUCT_TYPE_EBOOK);
-        $courseProducts = $this->listProductsService->listProductsByProductType(ProductType::PRODUCT_TYPE_COURSE);
+        $productsByType = [];
+        $source = 'product';
+        $tags = Tag::all(['name'])->pluck('name')->implode(',');
+        foreach ($types as $type) {
+            $products = $this->listProductsService->listProductsByProductType($type->id);
+            $productsByType[$type->slug] =[
+                'type' => $type,
+                'products' => $products
+            ];
+        }
 
-        return view('public.product', compact('uploadProducts', 'ebookProducts', 'courseProducts', 'types'));
+        return view('public.product', compact('productsByType', 'types', 'source', 'tags'));
     }
 
     public function show(string $slug)
     {
+        $source = 'product: '. $slug;
         $product = $this->productInfoService->__invoke($slug);
+        $tags = $product->tags->pluck('name')->implode(',');
         return view('public.product-show.blade.php', [
             'product' => $product
+            ,'source' => $source
+            ,'tags' => $tags
         ]);
     }
 }

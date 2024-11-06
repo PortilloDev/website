@@ -1,49 +1,44 @@
-<x-app-layout>
-    <!-- Sección del Banner Principal -->
-    <section class="hero bg-cover bg-center text-center mb-12" style="background-color: #fadb78;">
-        <div class="py-24">
-            <h1 class="text-5xl font-extrabold text-black mb-4">{{ $promotion->title }}</h1>
-        </div>
-    </section>
-
-    <main class="container mx-auto py-12 px-4">
-        <!-- Sección de Detalles del Recurso Gratuito -->
-        <section class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-6 text-black">Acerca del Recurso</h2>
-            <p class="text-lg text-gray-700">{{ $promotion->description }}</p>
-        </section>
-
-        <!-- Sección para el Embebido de Videos o Presentaciones -->
-        @if($promotion->embed_code)
-            <section class="flex flex-col items-center text-center mb-12">
-                <div class="w-full md:w-3/4 lg:w-1/2">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{{ $promotion->title }}</title>
+</head>
+<body class="flex flex-col bg-indigo-900">
+<div class="min-h-screen flex items-center justify-center">
+    <div class="bg-indigo-900 shadow-md rounded-lg overflow-hidden w-full lg:w-3/4 p-8">
+        <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-1/2 mb-8 lg:mb-0 lg:mr-8">
+                <img class="w-full h-full object-cover rounded-md" src="{{ asset('/storage/'.$promotion->thumbnail) }}" alt="{{ $promotion->title }}">
+            </div>
+            <div class="lg:w-1/2">
+                <h1 class="text-4xl font-bold text-blue-700 mb-6">{{ $promotion->title }}</h1>
+                <p class="text-gray-700 mb-6">{{ $promotion->description }}</p>
+                <div class="aspect-w-16 aspect-h-9 mb-6">
                     {!! $promotion->embed_code !!}
                 </div>
-            </section>
-        @endif
-
-        <!-- Formulario de Suscripción al Newsletter -->
-        <section class="bg-blue_button text-white py-12 px-4 rounded-lg text-center mb-12">
-            <h2 class="text-3xl font-bold mb-4">Descarga el Recurso Gratis</h2>
-            <p class="text-lg mb-6">Para acceder al recurso, por favor suscríbete a nuestro newsletter. Obtendrás actualizaciones y noticias directamente en tu bandeja de entrada.</p>
-            <form action="/newsletter" method="POST" class="flex flex-col space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-6 justify-center">
-                @csrf
-                <input type="text" name="name" class="w-full md:w-full px-4 py-3 rounded-md" placeholder="Tu nombre" value="{{ old('name') }}" required>
-                <input type="email" name="email" class="w-full md:w-full px-4 py-3 rounded-md" placeholder="Tu correo electrónico" value="{{ old('email') }}" required>
-                <button type="submit" class="bg-light text-black px-8 py-3 rounded-md hover:bg-yellow-600">Suscribirme</button>
-            </form>
-
-            @if(session('error'))
-                <div class="text-red-500 mt-4">
-                    {{ session('error') }}
+                <x-newsletter-form />
+            </div>
+        </div>
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Otros Productos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-4 shadow-md rounded-md">
+                    <h3 class="text-xl font-semibold mb-2">Producto 1</h3>
+                    <p class="text-gray-600">Descripción breve del producto 1.</p>
                 </div>
-            @endif
-
-            @if(session('success'))
-                <div class="text-green-500 mt-4">
-                    {{ session('success') }}
+                <div class="bg-white p-4 shadow-md rounded-md">
+                    <h3 class="text-xl font-semibold mb-2">Producto 2</h3>
+                    <p class="text-gray-600">Descripción breve del producto 2.</p>
                 </div>
-            @endif
-        </section>
-    </main>
-</x-app-layout>
+                <div class="bg-white p-4 shadow-md rounded-md">
+                    <h3 class="text-xl font-semibold mb-2">Producto 3</h3>
+                    <p class="text-gray-600">Descripción breve del producto 3.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -5,38 +5,38 @@ namespace App\Models;
 use App\Casts\MoneyCast;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Str;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description', 'product_type_id', 'slug', 'price', 'image_url', 'external_url', 'type', 'themes', 'summary'];
+    protected $fillable = ['title', 'description', 'slug', 'price', 'image', 'external_url', 'themes', 'summary', 'is_free'];
     protected $casts = [
         'price' => MoneyCast::class,
     ];
 
-    public function setTitleAttribute(string $value)
-    {
-        $this->attributes['title'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
-    }
 
-
-    public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function categories()
     {
         return $this->belongsToMany(Category::class);
     }
 
-    public function orders(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function tags()
     {
-        return $this->belongsToMany(Order::class)->withPivot('quantity', 'unit_price');
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 
-    public function comments(): \Illuminate\Database\Eloquent\Relations\MorphMany
+    public function leads()
     {
-        return $this->morphMany(Comment::class, 'commentable');
+        return $this->hasMany(Lead::class);
     }
-    public function productType(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+
+    public function orders()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+
+    public function productType()
     {
         return $this->belongsTo(ProductType::class);
     }

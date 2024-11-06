@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tag;
 use App\Service\EpisodeService\EpisodeInfoService;
 use App\Service\EpisodeService\ListEpisodesService;
 use Illuminate\Http\Request;
@@ -19,16 +20,22 @@ class PodcastController extends Controller
     }
     public function index()
     {
+        $source = 'podcast';
         $episodes = $this->listEpisodeService->list();
         $lastEpisode = $this->listEpisodeService->lastEpisode();
-        return view('public.podcast', compact('episodes', 'lastEpisode'));
+        $tags = $lastEpisode->tags->pluck('name')->implode(',');
+        return view('public.podcast', compact('episodes', 'lastEpisode', 'source', 'tags'));
     }
 
     public function show(string $slug)
     {
         $episode = $this->episodeInfoService->__invoke($slug);
+        $source = 'podcast: '. $slug;
+        $tags = $episode->tags->pluck('name')->implode(',');
         return view('public.episode', [
             'episode' => $episode,
+            'source' => $source
+            ,'tags' => $tags
         ]);
     }
 }

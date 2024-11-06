@@ -19,10 +19,9 @@ class HomeController extends Controller
     }
     public function index()
     {
+        $source = 'home';
+        $tags = 'home';
 
-        $episodes = $this->listEpisodeService->list(3);
-        $products = $this->listProductsService->uniqueList(3);
-
-        return view('public.home', compact('episodes', 'products'));
+        return view('public.home', compact('source', 'tags'));
     }
 }

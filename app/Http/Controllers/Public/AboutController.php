@@ -9,6 +9,8 @@ class AboutController extends Controller
 {
     public function index()
     {
-        return view('public.about');
+        $source = 'About';
+        $tags = 'About';
+        return view('public.about', compact('source', 'tags' ));
     }
 }

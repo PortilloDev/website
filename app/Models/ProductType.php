@@ -11,7 +11,7 @@ class ProductType extends Model
     public const PRODUCT_TYPE_EBOOK = 'Ebook';
     public const PRODUCT_TYPE_COURSE = 'Cursos';
     public const PRODUCT_TYPE_UPLOAD = 'Descargable';
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'slug', 'description'];
 
     public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
     {

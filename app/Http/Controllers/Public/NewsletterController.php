@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
-use App\Service\SubscriberService\SubscriberRegisterService;
+use App\Http\Requests\Public\CreateLeadRequest;
+use App\Service\LeadsService\LeadsRegisterService;
+use App\Service\LeadsService\LeadsRegisterServiceInterface;
 use Illuminate\Http\Request;
 use Psr\Log\LoggerInterface;
 
 class NewsletterController extends Controller
 {
-    private SubscriberRegisterService $subscriberRegisterService;
     private LoggerInterface $logger;
-    public function __construct()
+    public function __construct(private LeadsRegisterServiceInterface $leadsRegisterService)
     {
-        $this->subscriberRegisterService = new SubscriberRegisterService();
         $this->logger = app(LoggerInterface::class);
     }
 
@@ -22,32 +22,40 @@ class NewsletterController extends Controller
         return view('public.subscriber');
     }
 
-    public function create(Request $request)
+    public function create(CreateLeadRequest $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'name' => 'required',
-        ]);
-
-         if ($this->subscriberRegisterService->exists($request->get('email')))
+         if (! $this->leadsRegisterService->exists($request->get('email')))
          {
-                return redirect()->back()->with('email', 'El email ya se encuentra registrado');
+            $tags = null;
+             if ($request->get('tags')) {
+                $tags = explode(',', $request->get('tags'));
+                $tags = array_map('trim', $tags);
+            }
+
+
+            try {
+                $this->leadsRegisterService->create(
+                    $request->get('email'),
+                    $request->get('name'),
+                    null,
+                    $request->get('source'),
+                    $tags,
+                    $request->get('product_id') ? intval($request->get('product_id')) : null,
+                    $request->get('episode_id') ? intval($request->get('episode_id')) : null
+                );
+
+            }catch (\Exception $e){
+                $this->logger->error($e->getMessage());
+
+                return redirect()->back()->with('error', 'Hubo un problema con la suscripción. Por favor, inténtalo nuevamente.');
+
+            }
          }
+        return view('public.newsletter-success');
+    }
 
-        try {
-            $this->subscriberRegisterService->save(
-                $request->get('email'),
-                $request->get('name'),
-                null,
-            );
-
-        }catch (\Exception $e){
-            $this->logger->error($e->getMessage());
-
-            return redirect()->back()->with('error', 'Hubo un problema con la suscripción. Por favor, inténtalo nuevamente.');
-
-        }
-
+    public function thanks()
+    {
         return view('public.newsletter-success');
     }
 }

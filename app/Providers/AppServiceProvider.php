@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Service\LeadsService\LeadsRegisterService;
+use App\Service\LeadsService\LeadsRegisterServiceInterface;
+use App\Service\NeswletterService\NewsletterService;
+use App\Service\NeswletterService\NewsletterServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(NewsletterServiceInterface::class, NewsletterService::class);
+        $this->app->bind(LeadsRegisterServiceInterface::class, LeadsRegisterService::class);
     }
 
     /**

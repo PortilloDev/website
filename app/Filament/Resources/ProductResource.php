@@ -6,6 +6,7 @@ use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
 use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -14,6 +15,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\BooleanColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -21,98 +24,40 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
-
+    protected static ?string $navigationLabel = 'Productos';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                static::getTitleFormField(),
-                static::getDescriptionFormField(),
-                static::getSummaryFormField(),
-                static::getThemesFormField(),
-                static::getProductTypeFormField(),
-                static::getUrlFormField(),
-                static::getImageFormField(),
-                static::getPriceFormField(),
-                static::getTypeFormField(),
-            ]);
+        return $form->schema([
+            TextInput::make('name')->label('Nombre')->required(),
+            TextInput::make('slug')->label('Slug')->required()->unique(ignoreRecord: true),
+            Forms\Components\RichEditor::make('summary')->label('Resumen')->required(),
+            Forms\Components\RichEditor::make('description')->label('Descripción')->required(),
+            Forms\Components\RichEditor::make('themes')->label('Puntos Relevantes')->required(),
+            TextInput::make('price')->label('Precio')->numeric()->minValue(0)->required(),
+            Forms\Components\Toggle::make('is_free')->label('Es gratuito'),
+            FileUpload::make('image')->label('Imagen')->required(),
+            TextInput::make('external_url')->label('Url externa')->required(),
+            Select::make('categories')->label('Categorías')->multiple()->relationship('categories', 'name')->preload(),
+            Select::make('tags')->label('Etiquetas')->multiple()->relationship('tags', 'name')->preload(),
+            Select::make('product_type_id')
+                ->label('Tipo de Producto')
+                ->relationship('productType', 'name')
+                ->required(),
+        ]);
     }
 
-    public static function getTitleFormField(): Forms\Components\TextInput
-    {
-        return TextInput::make('title')
-            ->required();
-    }
-
-    public static function getUrlFormField(): Forms\Components\TextInput
-    {
-        return TextInput::make('url');
-    }
-
-    public static function getProductTypeFormField(): Forms\Components\Select
-    {
-        return Select::make('product_type_id')
-        ->relationship(name: 'productType', titleAttribute: 'id');
-    }
-    public static function getTypeFormField(): Forms\Components\Select
-    {
-        return Select::make('type')
-        ->options([
-            'free' => 'Free',
-            'payment' => 'Payment',
-        ])
-        ->required();
-    }
-    public static function getDescriptionFormField(): Forms\Components\Textarea
-    {
-        return Textarea::make('description')
-            ->required()
-            ->autosize()
-            ->minLength(2)
-            ->maxLength(1024);
-    }
-
-    public static function getSummaryFormField(): Forms\Components\Textarea
-    {
-        return Textarea::make('summary')
-            ->required()
-            ->autosize()
-            ->minLength(2)
-            ->maxLength(1024);
-    }
-
-    public static function getThemesFormField(): Forms\Components\Textarea
-    {
-        return Textarea::make('themes')
-            ->required()
-            ->autosize()
-            ->minLength(2)
-            ->maxLength(1024);
-    }
-
-    public static function getImageFormField(): Forms\Components\FileUpload
-    {
-        return FileUpload::make('image_url')
-            ->required();
-    }
-
-    public static function getPriceFormField(): Forms\Components\TextInput
-    {
-        return TextInput::make('price')
-            ->required();
-    }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('type'),
                 Tables\Columns\TextColumn::make('price')
                 ->money('EUR')
                 ->sortable(),
+                BooleanColumn::make('is_free')->label('Gratuito'),
+                TextColumn::make('created_at')->label('Creado')->dateTime('d/m/Y'),
             ])
             ->filters([
                 //

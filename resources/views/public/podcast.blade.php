@@ -65,6 +65,6 @@
             </div>
         </section>
         <!-- Formulario de Suscripción al Newsletter -->
-        <x-newsletter-form :errors="$errors"/>
+        <x-newsletter-form :source="$source" :tags="$tags" :episode="$lastEpisode" />
     </main>
 </x-app-layout>

@@ -54,7 +54,7 @@
             </div>
         </section>
         <!-- Formulario de Suscripción al Newsletter -->
-        <x-newsletter-form />
+        <x-newsletter-form :source="$source" :tags="$tags" :product="$product" />
     </main>
 
 </x-app-layout>
