@@ -13,7 +13,8 @@ interface LeadsRegisterServiceInterface
         ?string $source = Lead::SOURCE_WEB,
         ?array $tags = null,
         ?int $productId = null,
-        ?int $episodeId = null
+        ?int $episodeId = null,
+        ?int $promotionId = null,
     ): array;
 
 }

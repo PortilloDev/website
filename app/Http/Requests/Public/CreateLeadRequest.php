@@ -27,6 +27,7 @@ class CreateLeadRequest extends FormRequest
             'source' => 'nullable|string|max:255',
             'product_id' => 'nullable|integer|exists:products,id',
             'episode_id' => 'nullable|integer|exists:episodes,id',
+            'promotion_id' => 'nullable|integer|exists:promotions,id',
             'tags' => 'nullable|string',
         ];
     }

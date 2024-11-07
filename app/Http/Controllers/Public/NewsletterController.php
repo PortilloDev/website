@@ -41,7 +41,8 @@ class NewsletterController extends Controller
                     $request->get('source'),
                     $tags,
                     $request->get('product_id') ? intval($request->get('product_id')) : null,
-                    $request->get('episode_id') ? intval($request->get('episode_id')) : null
+                    $request->get('episode_id') ? intval($request->get('episode_id')) : null,
+                    $request->get('promotion_id') ? intval($request->get('promotion_id')) : null
                 );
 
             }catch (\Exception $e){

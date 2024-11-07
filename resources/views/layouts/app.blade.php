@@ -18,6 +18,7 @@
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
+        @include('cookie-consent::index')
         <header class="bg-secondary shadow">
             <div class="container mx-auto flex justify-between items-center py-6 px-4">
                 <h1 class="text-4xl font-bold"><a href="{{ route('home') }}" class="hover:underline">Artesanos del Código</a></h1>

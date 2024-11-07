@@ -23,7 +23,8 @@ class LeadsRegisterService implements LeadsRegisterServiceInterface
         ?string $source = Lead::SOURCE_WEB,
         ?array $tags = null,
         ?int $productId = null,
-        ?int $episodeId = null
+        ?int $episodeId = null,
+        ?int $promotionId = null,
     ): array {
 
         try {
@@ -35,7 +36,8 @@ class LeadsRegisterService implements LeadsRegisterServiceInterface
                     'status' => Lead::STATUS_SUBSCRIBED,
                     'source' => $source,
                     'product_id' => $productId,
-                    'episode_id' => $episodeId
+                    'episode_id' => $episodeId,
+                    'promotion_id' => $promotionId,
                 ]
             );
 

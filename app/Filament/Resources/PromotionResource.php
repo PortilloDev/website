@@ -7,6 +7,7 @@ use App\Filament\Resources\PromotionResource\RelationManagers;
 use App\Models\Promotion;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -34,7 +35,7 @@ class PromotionResource extends Resource
                     Forms\Components\TextInput::make('slug')->required(),
                     Forms\Components\RichEditor::make('description')->required(),
                     Forms\Components\RichEditor::make('embed_code')->required(),
-                    Forms\Components\FileUpload::make('thumbnail')->required(),
+                    FileUpload::make('image')->label('Imagen')->required(),
                     Select::make('type')->label('Tipo')->options([
                         'instagram' => 'Instagram',
                         'facebook'  => 'Facebook',

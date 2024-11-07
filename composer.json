@@ -13,6 +13,7 @@
         "livewire/livewire": "^3.4",
         "livewire/volt": "^1.0",
         "mailchimp/marketing": "^3.0",
+        "spatie/laravel-cookie-consent": "^3.3",
         "spatie/laravel-newsletter": "^5.2",
         "tomatophp/filament-docs": "^1.0"
     },
@@ -30,7 +31,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/HelperCookie.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
