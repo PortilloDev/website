@@ -57,8 +57,30 @@ class LeadsRegisterService implements LeadsRegisterServiceInterface
         return $response;
     }
 
-    public function exists(string $email)
+    public function existInService(string $email): bool|object
     {
+        return $this->newsletterService->existMember($email);
+
+    }
+
+    public function exist(string $email): bool
+    {
+        $member = $this->existInService($email);
+        if (!is_bool($member)) {
+            $existInDb = $this->lead::where('email', $email)->exists();
+            if (!$existInDb) {
+                $this->lead::create(
+                    [
+                        'email' => $email,
+                        'name' => $member->full_name,
+                        'status' => $member->status,
+                        'source' => $member->source,
+                    ]
+                );
+            }
+            return true;
+        }
+
         return $this->lead::where('email', $email)->exists();
     }
 }

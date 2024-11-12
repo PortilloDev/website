@@ -37,8 +37,7 @@ class ProductController extends Controller
                 'products' => $products
             ];
         }
-
-        return view('public.product', compact('productsByType', 'types', 'source', 'tags'));
+        return view('public.product.product', compact('productsByType', 'types', 'source', 'tags'));
     }
 
     public function show(string $slug)
@@ -46,7 +45,7 @@ class ProductController extends Controller
         $source = 'product: '. $slug;
         $product = $this->productInfoService->__invoke($slug);
         $tags = $product->tags->pluck('name')->implode(',');
-        return view('public.product-show.blade.php', [
+        return view('public.product.product-show', [
             'product' => $product
             ,'source' => $source
             ,'tags' => $tags

@@ -20,7 +20,7 @@ use Illuminate\Support\Str;
 class PromotionResource extends Resource
 {
     protected static ?string $model = Promotion::class;
-
+    protected static ?string $navigationLabel = 'Promociones';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

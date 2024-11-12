@@ -17,14 +17,14 @@ class ListEpisodesService
     public function list(int $count = 0): LengthAwarePaginator | Collection
     {
         if ($count > 0) {
-          return   $this->episode::paginate($count);
+          return   $this->episode::paginate($count)->orderBy('release_date', 'desc');
         }
-        return $this->episode->all();
+        return $this->episode->orderBy('release_date', 'desc')->get();;
     }
 
     public function lastEpisode(): Episode
     {
-        return $this->episode->latest()->first();
+        return $this->episode->orderBy('release_date', 'desc')->first();
     }
 
 }

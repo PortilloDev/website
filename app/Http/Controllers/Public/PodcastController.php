@@ -24,7 +24,7 @@ class PodcastController extends Controller
         $episodes = $this->listEpisodeService->list();
         $lastEpisode = $this->listEpisodeService->lastEpisode();
         $tags = $lastEpisode->tags->pluck('name')->implode(',');
-        return view('public.podcast', compact('episodes', 'lastEpisode', 'source', 'tags'));
+        return view('public.podcast.podcast', compact('episodes', 'lastEpisode', 'source', 'tags'));
     }
 
     public function show(string $slug)
@@ -32,7 +32,7 @@ class PodcastController extends Controller
         $episode = $this->episodeInfoService->__invoke($slug);
         $source = 'podcast: '. $slug;
         $tags = $episode->tags->pluck('name')->implode(',');
-        return view('public.episode', [
+        return view('public.podcast.episode', [
             'episode' => $episode,
             'source' => $source
             ,'tags' => $tags

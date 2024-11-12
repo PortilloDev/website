@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description', 'slug', 'price', 'image', 'external_url', 'themes', 'summary', 'is_free'];
+    protected $fillable = ['name', 'description', 'slug', 'price', 'image', 'external_url', 'themes', 'summary', 'is_free', 'product_type_id'];
     protected $casts = [
         'price' => MoneyCast::class,
     ];

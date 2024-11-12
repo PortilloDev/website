@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             TagsTableSeeder::class,
             EpisodesSeeder::class,
             ProductTypeSeeder::class,
+            ServiceSeeder::class,
 
         ]);
     }

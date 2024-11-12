@@ -3,7 +3,7 @@
         <!-- Título y Descripción Principal -->
         <section class="text-center mb-12">
             <h1 class="text-4xl font-bold mb-4 text-black">Productos que Impulsan tu Desarrollo</h1>
-            <p class="mb-3 text-gray-600 dark:text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">Explora nuestra selección de productos cuidadosamente diseñados para desarrolladores como tú. Desde ebooks profundos hasta recursos descargables y herramientas innovadoras, ofrecemos materiales que te ayudarán a superar desafíos y a mantenerte actualizado en el dinámico mundo del desarrollo web.</p>
+            <p class="mb-3 text-gray-600 dark:text-gray-700 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">Explora nuestra selección de productos cuidadosamente diseñados para desarrolladores como tú. Desde ebooks profundos hasta recursos descargables y herramientas innovadoras, ofrecemos materiales que te ayudarán a superar desafíos y a mantenerte actualizado en el dinámico mundo del desarrollo web.</p>
         </section>
         <!-- Categoría: Ebooks-->
         @foreach($productsByType as $type => $products)
@@ -17,11 +17,11 @@
                         @foreach( $products['products'] as $product )
                             <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                 <a  href="{{route('product_show',['slug' => $product->slug])}}">
-                                    <img class="p-8 rounded-t-lg"src="{{asset('/storage/'.$product->image_url)}}" alt="{{$product->title}}"/>
+                                    <img class="p-8 rounded-t-lg"src="{{asset('/storage/'.$product->image)}}" alt="{{$product->name}}"/>
                                 </a>
                                 <div class="px-5 pb-5">
                                     <a href="{{route('product_show',['slug' => $product->slug])}}">
-                                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $product->title }}</h5>
+                                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $product->name }}</h5>
                                     </a>
                                     <div class="flex items-center mt-2.5 mb-5">
                                         <div class="flex items-center space-x-1 rtl:space-x-reverse">
@@ -44,11 +44,7 @@
                                         <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
                                     </div>
                                     <div class="flex items-center justify-between">
-                                        @if($product->type == 'payment')
-                                            <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ $product->price}} €</span>
-                                        @else
-                                            <span class="text-3xl font-bold text-gray-900 dark:text-white">Gratis</span>
-                                        @endif
+                                        <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ $product->is_free ? 'Gratis' :  $product->price .' €'}} </span>
                                         <a  href="{{route('product_show',['slug' => $product->slug])}}"  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Explorar</a>
                                     </div>
                                 </div>

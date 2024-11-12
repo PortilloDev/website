@@ -3,10 +3,10 @@
     <div>
         <!-- Banner -->
         <section>
-            <img src="{{ asset('/storage/image/banner.png') }}" alt="Imagen principal" class="w-full max-h-96 object-cover">
+            <img src="{{ asset('/storage/image/banner.png') }}" alt="Imagen principal" class="hero bg-cover bg-center">
             <div class="container mx-auto text-center py-12 px-4">
                 <h2 class="text-4xl font-extrabold mb-4 text-black">Impulsa tu desarrollo</h2>
-                <p class="mb-3 text-gray-600 dark:text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">En Artesanos del Código, creemos que la pasión y la dedicación son las herramientas esenciales para convertirte en un verdadero maestro de la programación. Nuestra misión es compartir conocimientos y recursos que impulsen tu crecimiento profesional y te ayuden a alcanzar la excelencia en el desarrollo web.</p>
+                <p class="mb-3 text-gray-600 dark:text-gray-700 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">En Artesanos del Código, creemos que la pasión y la dedicación son las herramientas esenciales para convertirte en un verdadero maestro de la programación. Nuestra misión es compartir conocimientos y recursos que impulsen tu crecimiento profesional y te ayuden a alcanzar la excelencia en el desarrollo web.</p>
             </div>
         </section>
     </div>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="md:w-1/2 text-center md:text-left">
                     <h2 class="text-3xl font-bold mb-4 text-black">Podcast "Artesanos del Código"</h2>
-                    <p class="mb-3 text-gray-600 dark:text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">Sumérgete en nuestro podcast donde compartimos experiencias, buenas prácticas y las últimas tendencias en programación y desarrollo web. Cada episodio es una oportunidad para aprender, inspirarte y conectarte con expertos que comparten tu pasión por el código.</p>
+                    <p class="mb-3 text-gray-600 dark:text-gray-700 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">Sumérgete en nuestro podcast donde compartimos experiencias, buenas prácticas y las últimas tendencias en programación y desarrollo web. Cada episodio es una oportunidad para aprender, inspirarte y conectarte con expertos que comparten tu pasión por el código.</p>
                     <a href="{{route('podcast')}}" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block">Ir al Podcast</a>
                 </div>
             </div>
@@ -40,14 +40,28 @@
         <!-- Sección Presentando Contenido de Marketing y Programación -->
         <section class="text-center mb-12">
             <div class="flex flex-col md:flex-row items-center md:space-x-8">
-
-                <div class="md:w-1/2 text-center md:text-left">
-                    <h2 class="text-3xl font-bold mb-4 text-black">Recursos y Productos Exclusivos</h2>
-                    <p class="mb-3 text-gray-600 dark:text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">Accede a nuestros ebooks, herramientas descargables y otros recursos diseñados para desarrolladores comprometidos con su crecimiento profesional. Ya sea que busques profundizar en nuevas tecnologías o perfeccionar tus habilidades actuales, nuestros productos te ofrecen el conocimiento y las herramientas necesarias para destacar en el mundo del desarrollo web</p>
-                    <a href="{{route('product')}}" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block">Explorar Productos</a>
-                </div>
                 <div class="md:w-1/2 mb-8 md:mb-0">
                     <img src="{{asset('/storage/image/ebooks_info.png') }}" alt="Imagen de presentación" class="w-full h-auto rounded-lg shadow">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-4 text-black">Recursos y Productos Exclusivos</h2>
+                    <p class="mb-3 text-gray-600 dark:text-gray-700 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">Accede a nuestros ebooks, herramientas descargables y otros recursos diseñados para desarrolladores comprometidos con su crecimiento profesional. Ya sea que busques profundizar en nuevas tecnologías o perfeccionar tus habilidades actuales, nuestros productos te ofrecen el conocimiento y las herramientas necesarias para destacar en el mundo del desarrollo web</p>
+                    <a href="{{route('product')}}" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block">Explorar Productos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Presentando Servicios -->
+        <section class="text-center mb-12">
+            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="{{asset('/storage/image/service_info.png') }}" alt="Imagen de presentación" class="w-full h-auto rounded-lg shadow">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-4 text-black">Servicios</h2>
+                    <p class="mb-3 text-gray-600 dark:text-gray-700 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">Creemos que cada proyecto merece su espacio en la web y la visibilidad para crecer.
+                        En <strong>Artesanos del Código </strong>, ayudamos a emprendedores, profesionales y pequeñas empresas a construir una presencia en línea auténtica y accesible. Ofrecemos servicios completos de puesta en marcha de sitios web en WordPress, formación personalizada y mantenimiento para asegurar que cada proyecto, sin importar su tamaño o presupuesto, tenga el soporte y la visibilidad que necesita para destacar en el mundo digital.</p>
+                    <a href="{{route('services')}}" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block">Explorar Servicios</a>
                 </div>
             </div>
         </section>

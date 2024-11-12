@@ -16,10 +16,12 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\BooleanColumn;
+use Filament\Tables\Columns\TagsColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
 
 class ProductResource extends Resource
 {
@@ -29,13 +31,17 @@ class ProductResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            TextInput::make('name')->label('Nombre')->required(),
+            Forms\Components\TextInput::make('name')->reactive()
+                ->afterStateUpdated(function ($set, $state) {
+                    $set('slug', Str::slug($state));
+                })->required(),
             TextInput::make('slug')->label('Slug')->required()->unique(ignoreRecord: true),
             Forms\Components\RichEditor::make('summary')->label('Resumen')->required(),
             Forms\Components\RichEditor::make('description')->label('Descripción')->required(),
             Forms\Components\RichEditor::make('themes')->label('Puntos Relevantes')->required(),
             TextInput::make('price')->label('Precio')->numeric()->minValue(0)->required(),
             Forms\Components\Toggle::make('is_free')->label('Es gratuito'),
+            Forms\Components\Toggle::make('is_published')->label('Activo'),
             FileUpload::make('image')->label('Imagen')->required(),
             TextInput::make('external_url')->label('Url externa')->required(),
             Select::make('categories')->label('Categorías')->multiple()->relationship('categories', 'name')->preload(),
@@ -52,11 +58,13 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\TextColumn::make('name'),
+                TagsColumn::make('productType.name')->label('Tipo de Producto'),
                 Tables\Columns\TextColumn::make('price')
                 ->money('EUR')
                 ->sortable(),
                 BooleanColumn::make('is_free')->label('Gratuito'),
+                BooleanColumn::make('is_published')->label('Activo'),
                 TextColumn::make('created_at')->label('Creado')->dateTime('d/m/Y'),
             ])
             ->filters([

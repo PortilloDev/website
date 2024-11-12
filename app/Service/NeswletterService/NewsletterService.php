@@ -38,4 +38,15 @@ class NewsletterService implements NewsletterServiceInterface
         }
         return ['status' => 'success', 'response' => $response];
     }
+
+    public function existMember(string $email): bool|object
+    {
+        try {
+            $response = $this->client->lists->getListMember($this->listId, $email);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
+        return $response;
+    }
 }

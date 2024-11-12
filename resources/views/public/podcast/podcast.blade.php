@@ -2,7 +2,7 @@
     <main class="container mx-auto py-12 px-4">
         <section class="text-center mb-12">
             <h1 class="text-4xl font-bold mb-4 text-black">Descubre el Podcast "Artesanos del Código"</h1>
-            <p class="mb-3 text-gray-600 dark:text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">Nuestro podcast es un espacio dedicado a compartir conocimiento, experiencias y tendencias en el mundo de la programación y el desarrollo web. Cada episodio es una oportunidad para aprender de expertos, inspirarte y conectar con una comunidad apasionada por el código.</p>
+            <p class="mb-3 text-gray-600 dark:text-gray-700 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">Nuestro podcast es un espacio dedicado a compartir conocimiento, experiencias y tendencias en el mundo de la programación y el desarrollo web. Cada episodio es una oportunidad para aprender de expertos, inspirarte y conectar con una comunidad apasionada por el código.</p>
         </section>
         <!-- Listado de Episodios -->
         <section class="text-center mb-12">

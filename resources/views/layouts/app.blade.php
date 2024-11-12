@@ -5,7 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <meta name="Cache-Control" content="public, max-age=31536000">
+        <title>@yield('meta_title') - {{ config('app.name') }}</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="description" content="Web promocional del Podcast y servicios de programación sobre desarrollo web">
+        <meta name="meywords" content="Web promocional del Podcast y servicios de programación sobre desarrollo web">
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="  {{ config('app.name') }}  " />
+        <meta property="og:description" content="  Artesanos del Código - Podcast, Blog, Servicios, Proyectos  " />
+        <meta property="og:url" content="https://artesanosdelcodigo.com" />
+        <meta property="og:site_name"  content="  {{ config('app.name') }}  " />
+
+        <meta property="og:image" content="{{ asset('storage/blog/home.jpg') }}" />
+        <meta property="og:image" content=@yield('meta_image') />
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -21,7 +34,7 @@
         @include('cookie-consent::index')
         <header class="bg-secondary shadow">
             <div class="container mx-auto flex justify-between items-center py-6 px-4">
-                <h1 class="text-4xl font-bold"><a href="{{ route('home') }}" class="hover:underline">Artesanos del Código</a></h1>
+                <h1 class="text-3xl font-bold text-center"><a href="{{ route('home') }}" class="hover:underline">Artesanos del Código</a></h1>
                 <livewire:layout.public_navigation />
                 @if (auth()->check())
                     <livewire:layout.navigation />
@@ -42,6 +55,8 @@
 
         </div>
         @vite('resources/js/app.js')
+        <script src="{{ asset('js/app.js') }}"></script>
+        @yield('scripts')
         @livewireScripts
     </body>
 </html>

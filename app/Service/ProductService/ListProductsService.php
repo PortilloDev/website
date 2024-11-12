@@ -25,10 +25,9 @@ class ListProductsService
           return $this->product->all();
     }
 
-    public function listProductsByProductType(string $productType): \Illuminate\Support\Collection
+    public function listProductsByProductType(int $productTypeId): \Illuminate\Support\Collection
     {
-
-        $type =  $this->type::where('name', $productType)->get()->first();
+        $type =  $this->type::find($productTypeId);
         if (!$type) {
             return collect([]);
         }

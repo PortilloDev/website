@@ -6,25 +6,33 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Public\CreateLeadRequest;
 use App\Service\LeadsService\LeadsRegisterService;
 use App\Service\LeadsService\LeadsRegisterServiceInterface;
+use App\Service\ProductService\ListProductsService;
+use App\Service\ProductService\ProductInfoService;
 use Illuminate\Http\Request;
 use Psr\Log\LoggerInterface;
 
 class NewsletterController extends Controller
 {
     private LoggerInterface $logger;
+    private ProductInfoService $productInfoService;
     public function __construct(private LeadsRegisterServiceInterface $leadsRegisterService)
     {
+        $this->productInfoService = new ProductInfoService();
         $this->logger = app(LoggerInterface::class);
     }
 
-    public function index(Request $request)
+    public function index(Request $request, string $slug)
     {
-        return view('public.subscriber');
+        $product = $this->productInfoService->__invoke($slug);
+        return view('public.subscriber', [
+            'product' => $product
+        ]);
     }
 
     public function create(CreateLeadRequest $request)
     {
-         if (! $this->leadsRegisterService->exists($request->get('email')))
+
+         if (! $this->leadsRegisterService->exist($request->get('email')))
          {
             $tags = null;
              if ($request->get('tags')) {
@@ -51,8 +59,9 @@ class NewsletterController extends Controller
                 return redirect()->back()->with('error', 'Hubo un problema con la suscripción. Por favor, inténtalo nuevamente.');
 
             }
+             return view('public.newsletter-success');
          }
-        return view('public.newsletter-success');
+         return view ('public.newsletter-success-without-confirmation');
     }
 
     public function thanks()

@@ -12,6 +12,9 @@
                     <x-nav-link :href="route('podcast')" :active="request()->routeIs('podcast')" wire:navigate>
                         {{ __('Podcast') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('services')" :active="request()->routeIs('services')" wire:navigate>
+                        {{ __('Servicios') }}
+                    </x-nav-link>
                     <x-nav-link href="https://notasweb.me" target="_blank">
                         {{ __('Blog - Notas Web') }}
                     </x-nav-link>
@@ -21,6 +24,7 @@
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
                         {{ __('Contacto') }}
                     </x-nav-link>
+
                 </div>
             </div>
 
@@ -42,20 +46,23 @@
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                 {{ __('Home') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')" wire:navigate>
-                {{ __('Sobre Mi') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
-                {{ __('Contacto') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link href="https://notasweb.me" target="_blank">
-                {{ __('Blog - Notas Web') }}
+             <x-responsive-nav-link :href="route('services')" :active="request()->routeIs('services')" wire:navigate>
+                {{ __('Servicios') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('product')" :active="request()->routeIs('product')" wire:navigate>
                 {{ __('Productos') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('podcast')" :active="request()->routeIs('podcast')" wire:navigate>
                 {{ __('Podcast') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="https://notasweb.me" target="_blank" wire:navigate>
+                {{ __('Blog Notas Web') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')" wire:navigate>
+                {{ __('Sobre Mi') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
+                {{ __('Contacto') }}
             </x-responsive-nav-link>
         </div>
     </div>

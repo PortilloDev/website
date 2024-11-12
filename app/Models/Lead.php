@@ -47,4 +47,9 @@ class Lead extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function resources()
+    {
+        return $this->belongsToMany(Resource::class, 'lead_resource');
+    }
 }

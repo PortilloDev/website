@@ -17,4 +17,8 @@ interface LeadsRegisterServiceInterface
         ?int $promotionId = null,
     ): array;
 
+    public function existInService(string $email): bool|object;
+
+    public function exist(string $email): bool;
+
 }

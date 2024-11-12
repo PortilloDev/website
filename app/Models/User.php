@@ -62,8 +62,11 @@ class User extends Authenticatable  implements FilamentUser
 
     public function canAccessPanel(Panel $panel): bool
     {
-        //$adminEmail = env('ADMIN_EMAIL');
-        //return str_ends_with($this->email, $adminEmail) && $this->hasVerifiedEmail();
-        return true;
+        $adminEmail = env('ADMIN_EMAIL');
+        return str_ends_with($this->email, $adminEmail) && $this->hasVerifiedEmail();
+    }
+    public function resources()
+    {
+        return $this->belongsToMany(Resource::class, 'lead_resource');
     }
 }
