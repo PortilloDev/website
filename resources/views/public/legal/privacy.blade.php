@@ -21,7 +21,7 @@
                 <ul>
                     <li><strong>Nombre:</strong> Iván Portillo Pérez</li>
                     <li><strong>Dirección:</strong> Calle Valverde de los Arroyos, 1, 2C. Fuenlabrada 28944 - Madrid (España)</li>
-                    <li><strong>Email:</strong> <a href="mailto:ivan.portillo@notasweb.me" class="text-blue-500">ivan.portillo@notasweb.me</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:contacto@notasweb.me" class="text-blue-500">contacto@notasweb.me</a></li>
                 </ul>
 
                 <!-- Tipo de Datos Recopilados -->
@@ -70,7 +70,7 @@
                     <li>Solicitar la limitación del tratamiento.</li>
                     <li>Solicitar la portabilidad de tus datos.</li>
                 </ul>
-                <p class="text-md text-gray-700 mb-6">Para ejercer estos derechos, puedes contactar a través de <a href="mailto:ivan.portillo@notasweb.me" class="text-blue-500">ivan.portillo@notasweb.me</a>.</p>
+                <p class="text-md text-gray-700 mb-6">Para ejercer estos derechos, puedes contactar a través de <a href="mailto:contacto@notasweb.me" class="text-blue-500">contacto@notasweb.me</a>.</p>
 
                 <!-- Conservación de Datos -->
                 <h2 class="text-xl font-bold mb-2 mt-6 text-black">¿Por Cuánto Tiempo Conservaremos Tus Datos?</h2>
@@ -116,7 +116,7 @@
                     Si tienes preguntas sobre esta política o sobre el tratamiento de tus datos personales, puedes contactar a través de:
                 </p>
                 <ul class="list-disc list-inside">
-                    <li><strong>Email:</strong> <a href="mailto:ivan.portillo@notasweb.me" class="text-blue-500">ivan.portillo@notasweb.me</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:contacto@notasweb.me" class="text-blue-500">contacto@notasweb.me</a></li>
                     <li><strong>Dirección:</strong> Calle Valverde de los Arroyos, 1, 2C. Fuenlabrada 28944 - Madrid (España)</li>
                 </ul>
             </div>

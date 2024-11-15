@@ -34,7 +34,7 @@
 
         <!-- Sección de contacto -->
         <div class="mt-8 text-center">
-            <p class="text-black text-sm">¿Problemas? <a href="mailto:ivan.portillo@notasweb.me" class="text-blue_button">Contáctanos</a>.</p>
+            <p class="text-black text-sm">¿Problemas? <a href="mailto:contacto@notasweb.me" class="text-blue_button">Contáctanos</a>.</p>
         </div>
     </div>
 </x-app-layout>

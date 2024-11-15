@@ -3,7 +3,6 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-                <!-- Logo -->
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('product')" :active="request()->routeIs('product')" wire:navigate>
@@ -18,12 +17,27 @@
                     <x-nav-link href="https://notasweb.me" target="_blank">
                         {{ __('Blog - Notas Web') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')" wire:navigate>
-                        {{ __('Sobre Mi') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
-                        {{ __('Contacto') }}
-                    </x-nav-link>
+                    <!-- Dropdown Menu -->
+                    <div class="relative group items-center hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link href="#" class="cursor-pointer">
+                            {{ __('Más') }}
+                        </x-nav-link>
+                        <div
+                            class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-16 w-40">
+                            <ul class="py-2 ">
+                                <li>
+                                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')" class="block px-4 py-2 hover:bg-gray-100">
+                                        {{ __('Sobre Mi') }}
+                                    </x-nav-link>
+                                </li>
+                                <li>
+                                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')" class="block px-4 py-2 hover:bg-gray-100">
+                                        {{ __('Contacto') }}
+                                    </x-nav-link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
                 </div>
             </div>

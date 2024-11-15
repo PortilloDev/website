@@ -6,14 +6,14 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <meta name="Cache-Control" content="public, max-age=31536000">
-        <title>@yield('meta_title') - {{ config('app.name') }}</title>
+        <title>{{ config('app.name') }}</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="description" content="Web promocional del Podcast y servicios de programación sobre desarrollo web">
+        <meta name="description" content="Artesanos del Código - Podcast, Blog, Servicios, Proyectos. ¿Deseas tener una página web o tienda online para incrementar tus ventas? En Coders Free te brindamos el mejor servicio de diseño y desarrollo web. Contáctanos  ">
         <meta name="meywords" content="Web promocional del Podcast y servicios de programación sobre desarrollo web">
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="  {{ config('app.name') }}  " />
-        <meta property="og:description" content="  Artesanos del Código - Podcast, Blog, Servicios, Proyectos  " />
+        <meta property="og:description" content="Artesanos del Código - Podcast, Blog, Servicios, Proyectos. ¿Deseas tener una página web o tienda online para incrementar tus ventas? En Coders Free te brindamos el mejor servicio de diseño y desarrollo web. Contáctanos  " />
         <meta property="og:url" content="https://artesanosdelcodigo.com" />
         <meta property="og:site_name"  content="  {{ config('app.name') }}  " />
 
@@ -24,7 +24,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM0sFf84ohLe6I0WgOycVi/3OxczQ8p2g8pY5B7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -34,7 +34,12 @@
         @include('cookie-consent::index')
         <header class="bg-secondary shadow">
             <div class="container mx-auto flex justify-between items-center py-6 px-4">
-                <h1 class="text-3xl font-bold text-center"><a href="{{ route('home') }}" class="hover:underline">Artesanos del Código</a></h1>
+                <h1 class="text-center font-bold leading-tight">
+                    <a href="{{ route('home') }}" class="hover:underline">
+                        <span class="block text-3xl sm:text-4xl md:text-5xl">Artesanos</span>
+                        <span class="block text-xl sm:text-2xl md:text-3xl text-gray-700">Del Código</span>
+                    </a>
+                </h1>
                 <livewire:layout.public_navigation />
                 @if (auth()->check())
                     <livewire:layout.navigation />

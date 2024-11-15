@@ -18,7 +18,7 @@
             <ul>
                 <li><strong>Responsable Legal:</strong> Iván Portillo Pérez</li>
                 <li><strong>Dirección:</strong> Calle Valverde de los Arroyos, 1, 2C. Fuenlabrada 28944 - Madrid (España)</li>
-                <li><strong>Correo Electrónico:</strong> <a href="mailto:ivan.portillo@notasweb.me" class="text-blue-500">ivan.portillo@notasweb.me</a></li>
+                <li><strong>Correo Electrónico:</strong> <a href="mailto:contacto@notasweb.me" class="text-blue-500">contacto@notasweb.me</a></li>
             </ul>
 
             <!-- Objeto y Ámbito de Aplicación -->
@@ -71,7 +71,7 @@
                 Si tienes alguna pregunta sobre estos términos y condiciones, puedes contactar a través de:
             </p>
             <ul class="list-disc list-inside">
-                <li><strong>Correo Electrónico:</strong> <a href="mailto:ivan.portillo@notasweb.me" class="text-blue-500">ivan.portillo@notasweb.me</a></li>
+                <li><strong>Correo Electrónico:</strong> <a href="mailto:contacto@notasweb.me" class="text-blue-500">contacto@notasweb.me</a></li>
                 <li><strong>Dirección:</strong> Calle Valverde de los Arroyos, 1, 2C. Fuenlabrada 28944 - Madrid (España)</li>
             </ul>
         </div>

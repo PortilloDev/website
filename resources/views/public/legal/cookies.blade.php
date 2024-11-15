@@ -144,7 +144,7 @@
                 Si tienes preguntas sobre esta política o si tienes problemas de privacidad en relación con el acceso o con la corrección de la información personal, puedes ponerte en contacto con nosotros a través de nuestro formulario de consultas o escribirnos a la siguiente dirección:
             </p>
             <ul class="list-disc list-inside">
-                <li><strong>Email:</strong> <a href="mailto:ivan.portillo@notasweb.me" class="text-blue-500">ivan.portillo@notasweb.me</a></li>
+                <li><strong>Email:</strong> <a href="mailto:contacto@notasweb.me" class="text-blue-500">contacto@notasweb.me</a></li>
             </ul>
             <p class="text-md text-gray-700 mb-6">
                 Aunque la mayoría de las preguntas y problemas relacionados con el acceso se pueden gestionar de forma rápida, las solicitudes complejas pueden necesitar más investigación y tiempo. En tales casos, los problemas se solucionarán o se te informará sobre la naturaleza del problema y los siguientes pasos apropiados en un plazo de treinta días.

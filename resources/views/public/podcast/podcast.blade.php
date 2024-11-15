@@ -60,7 +60,7 @@
                 </a>
                 <a href="https://www.ivoox.com/podcast-artesanos-del-codigo_sq_f12479098_1.html" target="_blank"  class="bg-orange-500 text-white flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-orange-600">
                     <i class="fas fa-podcast"></i>
-                    <span>Ivoox Podcasts</span>
+                    <span>Ivoox</span>
                 </a>
             </div>
         </section>

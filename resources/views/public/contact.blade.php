@@ -76,7 +76,7 @@
         <section class="text-center mb-12">
             <h2 class="text-3xl font-bold mb-6 text-black">Nuestra Información de Contacto</h2>
             <div class="bg-white shadow p-6 rounded-lg">
-                <p class="text-lg text-gray-700 mb-4">Correo Electrónico: <a href="mailto:ivan.portillo@notasweb.me" class="text-blue-600 hover:underline">ivan.portillo@notasweb.me</a></p>
+                <p class="text-lg text-gray-700 mb-4">Correo Electrónico: <a href="mailto:contacto@notasweb.me" class="text-blue-600 hover:underline">contacto@notasweb.me</a></p>
                 <p class="text-xl text-gray-700 mb-6">También puedes encontrarme en redes sociales y plataformas profesionales. ¡Conectemos y construyamos juntos la comunidad de Artesanos del Código!</p>
             </div>
         </section>
