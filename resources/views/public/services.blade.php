@@ -237,7 +237,7 @@
         <!-- Sección 3: Contacto -->
         <div class="text-center my-5 mt-10">
             <h4 class="text-2xl font-bold text-gray-700 mb-6">¿Interesado en nuestros servicios?</h4>
-            <p class="text-xl text-gray-700 mb-6">Contáctanos para obtener más información o para programar una consulta. Escribe a <strong> <a href="mailto:contacto@notasweb.me" class="btn btn-primary"> nuestro email</a></strong>, o visita nuestro <strong><a href="{{ route('contact') }}">formulario de contacto</a></strong>.</p>
+            <p class="text-xl text-gray-700 mb-6">Contáctanos para obtener más información o para programar una consulta. Escribe a <strong> <a href="mailto:contacto@notasweb.me" class="btn btn-primary"> nuestro email</a></strong>.</p>
         </div>
     </main>
 </x-app-layout>

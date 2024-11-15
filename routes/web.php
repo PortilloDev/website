@@ -27,7 +27,6 @@ Route::get('/sobre-mi', [AboutController::class, 'index'])->name('about');
 Route::get('/productos', [ProductController::class, 'index'])->name('product');
 Route::get('/productos/{slug}', [ProductController::class, 'show'])->name('product_show');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/contacto', [ContactController::class, 'index'])->name('contact');
 Route::post('/contacto/enviar', [ContactController::class, 'register'])->name('contact_register');
 Route::get('/podcast', [PodcastController::class, 'index'])->name('podcast');
 Route::get('/servicios', [ServiceController::class, 'index'])->name('services');

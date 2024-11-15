@@ -6,7 +6,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
                     <div class="col-span-1 py-8">
                         <div class="flex justify-center">
-                            <img src="{{ asset('images/service-banner.png') }}" alt="Servicios Web" class="h-96">
+                            <img src="{{ asset('images/service-banner-2.png') }}" alt="Servicios Web" class="h-96">
                         </div>
                     </div>
                     <div class="col-span-1">
