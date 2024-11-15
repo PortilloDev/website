@@ -65,7 +65,7 @@
                             <h3 class="mb-4 text-2xl font-semibold">Básico</h3>
                             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">PAGO ÚNICO</p>
                             <div class="flex justify-center items-baseline my-8">
-                                <span class="mr-2 text-5xl font-extrabold">175 €</span>
+                                <span class="mr-2 text-5xl font-extrabold">200 €</span>
                             </div>
                             <ul role="list" class="mb-8 space-y-4 text-left">
                                 <li class="flex items-center space-x-3">
@@ -86,11 +86,11 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                    <span>Mantenimiento durante el primer año (hasta 1 hora de soporte mensual para resolver dudas o problemas)</span>
+                                    <span>Mantenimiento durante el primer año (hasta 1 hora de soporte mensual para resolver dudas o problemas menores)</span>
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                    <span>Renovación anual de mantenimiento (100€)</span>
+                                    <span>Renovación anual de mantenimiento (100 €)</span>
                                 </li>
                             </ul>
                             <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
@@ -102,7 +102,7 @@
                             <h3 class="mb-4 text-2xl font-semibold">Profesional</h3>
                             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">PAGO ÚNICO</p>
                             <div class="flex justify-center items-baseline my-8">
-                                <span class="mr-2 text-5xl font-extrabold">300 €</span>
+                                <span class="mr-2 text-5xl font-extrabold">400 €</span>
                             </div>
                             <ul role="list" class="mb-8 space-y-4 text-left">
                                 <li class="flex items-center space-x-3">
@@ -127,7 +127,7 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                    <span>Renovación anual de mantenimiento (125€)</span>
+                                    <span>Renovación anual de mantenimiento (200 €)</span>
                                 </li>
                             </ul>
                             <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
@@ -139,7 +139,7 @@
                             <h3 class="mb-4 text-2xl font-semibold">Premium</h3>
                             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">PAGO ÚNICO</p>
                             <div class="flex justify-center items-baseline my-8">
-                                <span class="mr-2 text-5xl font-extrabold">500 €</span>
+                                <span class="mr-2 text-5xl font-extrabold">700 €</span>
                             </div>
                             <ul role="list" class="mb-8 space-y-4 text-left">
                                 <li class="flex items-center space-x-3">
@@ -156,11 +156,11 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                    <span>Mantenimiento durante el primer año (hasta 4 horas de soporte mensual para resolver dudas o problemas)</span>
+                                    <span>Mantenimiento durante el primer año (hasta 3 horas de soporte mensual para resolver dudas o problemas)</span>
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                    <span>Renovación anual de mantenimiento (175€)</span>
+                                    <span>Renovación anual de mantenimiento (300 €)</span>
                                 </li>
                             </ul>
                             <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
@@ -179,7 +179,7 @@
                             ¿Qué es un dominio?
                         </button>
                         <div x-show="open" class="mt-2">
-                            <p>El Servicio Básico incluye la instalación y configuración de WordPress, la instalación de un tema básico y la formación inicial para que puedas gestionar tu propio sitio web.</p>
+                            <p>Un dominio es el nombre único que identifica a tu sitio web en internet (como www.artesanosdelcodigo.net). Es la dirección que las personas ingresan en su navegador para visitar tu página. Nosotros te ayudamos a elegir y configurar un dominio que se adapte a tu marca y objetivos.</p>
                         </div>
                     </div>
                     <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
@@ -187,7 +187,7 @@
                             Si tengo un dominio en otro hosting, ¿puedo utilizarlo?
                         </button>
                         <div x-show="open" class="mt-2">
-                            <p>Sí, yo te ayudaría a configuración para redireccionar las peticiones de tu dominio a tu sitio WordPress.</p>
+                            <p>¡Claro que sí! Si ya tienes un dominio registrado en otro proveedor de hosting, podemos ayudarte a configurarlo para que funcione con nuestro servicio. Nos encargamos de hacer todos los ajustes necesarios para que tu dominio esté enlazado correctamente con tu nueva web.</p>
                         </div>
                     </div>
                     <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
@@ -195,15 +195,8 @@
                             Si tengo otro wordpress, ¿puedo migrar mi sitio?
                         </button>
                         <div x-show="open" class="mt-2">
-                            <p>Sí, yo te ayudaría a migrar tu sitio a WordPress. Y te ayudaría a configurar el dominio para redireccionar las peticiones de tu dominio a tu sitio WordPress.</p>
-                        </div>
-                    </div>
-                    <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
-                        <button @click="open = !open" class="w-full text-left font-semibold text-lg">
-                            Si no tengo un dominio, ¿puedo contratar el servicio?
-                        </button>
-                        <div x-show="open" class="mt-2">
-                            <p>Sí, yo te ayudo a buscar el dominio que necesitas. Y el coste del dominio se añadiría al precio del servicio. Y la renovación se sumaría al precio de mantenimiento anual.</p>
+                            <p> Sí, ofrecemos el servicio de migración para sitios web en WordPress. Si ya tienes un sitio en otro servidor, podemos trasladarlo a nuestro hosting de manera segura, conservando tu contenido y configuración. La migración puede incluir, si lo deseas, la optimización de SEO y redirecciones para que no pierdas tu posicionamiento en buscadores.
+                            </p>
                         </div>
                     </div>
                     <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
@@ -211,7 +204,7 @@
                             ¿Qué incluye el Servicio Básico?
                         </button>
                         <div x-show="open" class="mt-2">
-                            <p>El Servicio Básico incluye la instalación y configuración de WordPress, la instalación de un tema básico y la formación inicial para que puedas gestionar tu propio sitio web.</p>
+                            <p>El Servicio Básico incluye la instalación y configuración de WordPress, es apropiado para personas que ya tienen un conocimiento avanzado de WordPress y quieren agregar un sitio web personalizado y autogestionado.</p>
                         </div>
                     </div>
                     <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
@@ -219,7 +212,7 @@
                             ¿Qué tipo de soporte ofrecen?
                         </button>
                         <div x-show="open" class="mt-2">
-                            <p>Ofrecemos soporte técnico para ayudarte a resolver problemas menores, así como asistencia en la gestión de tu sitio web, dependiendo del servicio que hayas contratado.</p>
+                            <p>Ofrecemos soporte personalizado en función del paquete contratado. Para el servicio básico, incluimos soporte para problemas menores y dudas puntuales. En los planes Plus y Premium, ampliamos el soporte para cubrir necesidades adicionales y responder de forma prioritaria. Nuestro objetivo es que siempre te sientas acompañado y respaldado.</p>
                         </div>
                     </div>
                     <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
@@ -227,7 +220,63 @@
                             ¿Puedo cancelar mi plan en cualquier momento?
                         </button>
                         <div x-show="open" class="mt-2">
-                            <p>Sí, puedes cancelar tu plan en cualquier momento. Y se mantendría el servicio en funcionamiento hasta que termines la renovación.</p>
+                            <p>Sí, puedes cancelar tu plan en cualquier momento. Solo te pedimos que nos avises con antelación para facilitar la transición y brindarte ayuda en el proceso de migración o cierre del servicio, si lo necesitas. Queremos que tengas control total sobre tu servicio.</p>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
+                        <button @click="open = !open" class="w-full text-left font-semibold text-lg">
+                            ¿Qué diferencia hay entre los planes Básico, Plus y Premium?
+                        </button>
+                        <div x-show="open" class="mt-2">
+                            <p>Cada plan está diseñado para adaptarse a diferentes necesidades. El plan Básico es ideal para quienes ya tienen conocimientos con Wordpress y solo necesitan un alojamiento. El plan Plus incluye una estructura de sitio más completa, con páginas adicionales y formularios de captación. El plan Premium ofrece una configuración avanzada con tienda en línea y optimización SEO. Puedes ver todos los detalles en nuestra sección de servicios.</p>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
+                        <button @click="open = !open" class="w-full text-left font-semibold text-lg">
+                            ¿Cómo es el proceso de creación del sitio web?
+                        </button>
+                        <div x-show="open" class="mt-2">
+                            <p>El proceso es sencillo y comienza con una reunión para conocer tus necesidades. Luego, configuramos el hosting, el dominio y el WordPress. Creamos el diseño de la web, te brindamos formación para que puedas gestionar tu contenido, y ofrecemos soporte continuo para garantizar que todo funcione correctamente. Te acompañamos en cada paso para que la experiencia sea positiva y sin complicaciones.</p>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
+                        <button @click="open = !open" class="w-full text-left font-semibold text-lg">
+                            ¿Cuánto tiempo toma tener mi sitio web listo?
+                        </button>
+                        <div x-show="open" class="mt-2">
+                            <p>El tiempo de creación depende del plan que elijas y de la complejidad de la web. Para el plan Básico, el sitio puede estar listo en una semana. Los planes Plus y Premium, que incluyen más funcionalidades, pueden tomar entre 2 y 4 semanas. Siempre nos esforzamos por ofrecer un servicio rápido sin comprometer la calidad.</p>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
+                        <button @click="open = !open" class="w-full text-left font-semibold text-lg">
+                            ¿Qué pasa si necesito una funcionalidad específica en mi sitio?
+                        </button>
+                        <div x-show="open" class="mt-2">
+                            <p>Si necesitas funcionalidades especiales, como integraciones de sistemas de pago, CRM, o cualquier otra personalización, ofrecemos un servicio de desarrollo a medida. Analizamos tus necesidades y proponemos soluciones adaptadas a tus objetivos. Nos aseguramos de que tu sitio tenga todo lo necesario para que funcione como deseas.</p>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
+                        <button @click="open = !open" class="w-full text-left font-semibold text-lg">
+                            ¿Cómo funciona el mantenimiento anual después del primer año?
+                        </button>
+                        <div x-show="open" class="mt-2">
+                            <p>El mantenimiento anual incluye actualizaciones de seguridad, plugins y temas, así como monitoreo básico para asegurar que tu sitio funcione sin problemas. En los planes Plus y Premium, también ofrecemos soporte prioritario y optimización de rendimiento. Nuestro objetivo es mantener tu sitio seguro y actualizado para que siempre esté en óptimas condiciones.</p>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
+                        <button @click="open = !open" class="w-full text-left font-semibold text-lg">
+                            ¿Por qué es importante tener una web actualizada y segura?
+                        </button>
+                        <div x-show="open" class="mt-2">
+                            <p>Mantener tu web actualizada y segura es crucial para evitar problemas técnicos y protegerla contra amenazas de seguridad. Las actualizaciones de plugins y temas mejoran la funcionalidad y protegen contra vulnerabilidades. Con nuestro servicio de mantenimiento, te aseguramos que tu sitio esté siempre protegido y funcionando al máximo.</p>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="mb-4 border-b-2 border-gray-300 pb-4">
+                        <button @click="open = !open" class="w-full text-left font-semibold text-lg">
+                            ¿Puedo mejorar o cambiar mi plan más adelante?
+                        </button>
+                        <div x-show="open" class="mt-2">
+                            <p>Sí, puedes mejorar o cambiar de plan en cualquier momento. Si empiezas con el plan Básico y en el futuro necesitas una tienda en línea o una estructura más avanzada, puedes actualizar tu plan. Te ayudamos a hacer el cambio de manera sencilla para que siempre tengas el soporte adecuado para tus necesidades.</p>
                         </div>
                     </div>
                 </div>
