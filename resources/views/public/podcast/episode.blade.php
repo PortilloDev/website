@@ -15,9 +15,9 @@
         </section>
         <hr class="text-center bold border-2">
         <!-- Sección de la Descripción del Episodio -->
-        <section class="text-center mb-12 mt-12">
+        <section class="text-left mb-12 mt-12">
             <h2 class="text-3xl font-bold mb-6 text-black">Descripción del Episodio</h2>
-            <p class="text-black shadow-lg">{!! $episode->description !!}</p>
+            <p class="text-black shadow-lg">{!! $episode->description !!} </p>
 
         </section>
 

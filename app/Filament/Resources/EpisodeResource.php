@@ -41,7 +41,6 @@ class EpisodeResource extends Resource
                     Forms\Components\TextInput::make('url')->label('URL')->url()->required(),
                     Forms\Components\TextInput::make('embedded')->label('Código embebido')->required(),
                     Forms\Components\RichEditor::make('description')->required(),
-                    Forms\Components\RichEditor::make('embed_code')->required(),
                     Forms\Components\FileUpload::make('image')->label('Imagen episodio')->required(),
                     DateTimePicker::make('release_date')->label('Fecha de publicación')->required(),
                     Select::make('tags')->label('Etiquetas')->multiple()->relationship('tags', 'name')->preload(),

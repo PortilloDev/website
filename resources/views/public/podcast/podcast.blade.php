@@ -39,8 +39,8 @@
                                 <img src="{{asset('/storage/'.$episode->image)}}" alt="{{ $episode->title }}" class="w-16 h-16 object-cover">
                             </td>
                             <td class="py-4 px-6 border-b border-gray-300 text-black">{{ $episode->title }}</td>
-                            <td class="py-4 px-6 border-b border-gray-300">
-                                <a href="{{ route('episode', ['slug' => $episode->slug]) }}" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Ver Episodio Completo</a>
+                            <td class="py-4 px-6 border-b border-gray-300 text-center">
+                                <a href="{{ route('episode', ['slug' => $episode->slug]) }}" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Escuchar</a>
                             </td>
                         </tr>
                     @endforeach

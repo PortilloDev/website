@@ -8,7 +8,7 @@
                         <h1 class="text-center text-4xl font-extrabold mb-4 text-black">NUESTROS SERVICIOS</h1>
                         <p class="mt-4 text-left mb-3 text-gray-600 dark:text-gray-700 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">Creemos que cada proyecto merece su espacio en el mundo digital y la oportunidad de destacar. En Artesanos del Código, ayudamos a emprendedores, profesionales y pequeñas empresas a construir una presencia en línea auténtica, atractiva y accesible. Ofrecemos servicios completos de creación de sitios web en WordPress, con formación personalizada y mantenimiento continuo. Nuestro objetivo es que cada proyecto, sin importar su tamaño o presupuesto, tenga el soporte y la visibilidad que necesita para llegar a más personas y crecer en el entorno digital.</p>
                         <div class="flex justify-center mt-4">
-                            <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
+                            <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button text-center w-1/3 text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
 
         <!-- Sección 3: Nuestros Planes -->
         <section>
-            <div class="bg-light py-20 text-white">
+            <div class="bg-light py-14 text-white shadow p-4 rounded-lg">
                 <h2 class="text-center text-4xl font-extrabold mb-4 text-black">NUESTROS PLANES</h2>
                 <p class="text-lg text-gray-700 mb-4 font-extrabold text-center mt-2">Elige el Plan que más se acomode a tus necesidades</p>
             </div>
@@ -61,7 +61,7 @@
                 <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 mb-12">
                     <!-- Plan Básico -->
                     <div>
-                        <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                        <div class="flex flex-col h-full p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                             <h3 class="mb-4 text-2xl font-semibold">Básico</h3>
                             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">PAGO ÚNICO</p>
                             <div class="flex justify-center items-baseline my-8">
@@ -93,12 +93,15 @@
                                     <span>Renovación anual de mantenimiento (100 €)</span>
                                 </li>
                             </ul>
-                            <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
+                            <div class="flex flex-grow"></div>
+                            <div class="flex pt-10">
+                                <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button w-full text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
+                            </div>
                         </div>
                     </div>
                     <!-- Plan Pro -->
                     <div>
-                        <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                        <div class="flex flex-col h-full p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                             <h3 class="mb-4 text-2xl font-semibold">Profesional</h3>
                             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">PAGO ÚNICO</p>
                             <div class="flex justify-center items-baseline my-8">
@@ -130,12 +133,15 @@
                                     <span>Renovación anual de mantenimiento (200 €)</span>
                                 </li>
                             </ul>
-                            <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
+                            <div class="flex flex-grow"></div>
+                            <div class="flex pt-10">
+                                <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button w-full text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
+                            </div>
                         </div>
                     </div>
                     <!-- Plan Premium -->
                     <div>
-                        <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                        <div class="flex flex-col h-full p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                             <h3 class="mb-4 text-2xl font-semibold">Premium</h3>
                             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">PAGO ÚNICO</p>
                             <div class="flex justify-center items-baseline my-8">
@@ -163,12 +169,20 @@
                                     <span>Renovación anual de mantenimiento (300 €)</span>
                                 </li>
                             </ul>
-                            <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
+                            <div class="flex flex-grow"></div>
+                            <div class="flex pt-10">
+                                <a href="mailto:contacto@notasweb.me" target="_blank" class="bg-blue_button w-full text-white px-6 py-3 rounded-md hover:bg-blue-600 inline-block mt-4"><i class="fas fa-envelope"></i> Consulta</a>
+                            </div>
+
                         </div>
                     </div>
                     <!-- Otros Planes omitidos para brevedad -->
                 </div>
             </div>
+        </section>
+        <section class="bg-primary py-2 text-left shadow p-4 rounded-lg w-full mb-4" id="faq">
+            <span class="text-black text-md font-bold mb-2">*Todas nuestras webs están alojadas en un hosting de alta calidad y reconocido internacionalmente como es Hostinger. Con un rendimiento confiable, seguridad avanzada y soporte técnico 24/7, garantizamos que tu sitio web esté siempre disponible y funcionando al máximo. Además, tendrás acceso a un asistente de inteligencia artificial integrado, diseñado para facilitar la creación y gestión de contenido, ayudándote a mantener tu web actualizada y atractiva para tus visitantes.</span>
+
         </section>
         <section class="bg-white py-2 text-center shadow-lg w-full">
             <div class="faq-section my-2">

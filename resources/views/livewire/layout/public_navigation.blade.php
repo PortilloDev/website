@@ -1,27 +1,7 @@
-<nav x-data="{ open: false }" class="bg-secondary border-b border-gray-100 text-black">
+<nav x-data="{ open: false }" id="menu" class="bg-secondary border-b border-gray-100 text-black">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-end space-x-8 mt-4 mb-4">
-            <a href="https://www.facebook.com/profile.php?id=61556931680867" target="_blank" class="text-black hover:text-blue-500 transform hover:scale-125 transition duration-300">
-                <i class="fab fa-facebook fa-1x"></i>
-            </a>
-            <a href="https://www.instagram.com/artesanosdelcodigo/" target="_blank" class="text-black hover:text-blue-500 transform hover:scale-125 transition duration-300">
-                <i class="fab fa-instagram fa-1x"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/ivan-portillo-perez/" target="_blank" class="text-black hover:text-blue-500 transform hover:scale-125 transition duration-300">
-                <i class="fab fa-linkedin fa-1x"></i>
-            </a>
-            <a href="https://notasweb.me" target="_blank" class="text-black hover:text-blue-500 transform hover:scale-125 transition duration-300">
-                <i class="fab fa-blogger-b fa-1x"></i>
-            </a>
-            <a href="https://open.spotify.com/show/1TqvkZRtIpTTdEus9i2l7j" target="_blank" class="text-black hover:text-blue-500 transform hover:scale-125 transition duration-300">
-                <i class="fab fa-spotify fa-1x"></i>
-            </a>
-            <a href="https://www.ivoox.com/podcast-artesanos-del-codigo_sq_f12479098_1.html" target="_blank" class="text-black hover:text-blue-500 transform hover:scale-125 transition duration-300">
-                <i class="fas fa-podcast fa-1x"></i>
-            </a>
-        </div>
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between h-14">
             <div class="flex">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
