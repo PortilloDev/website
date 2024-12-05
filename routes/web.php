@@ -6,18 +6,19 @@ use App\Http\Controllers\Public\LegalController;
 use App\Http\Controllers\Public\PodcastController;
 use App\Http\Controllers\Public\PromotionController;
 use App\Http\Controllers\Public\ServiceController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Public\HomeController;
 use App\Http\Controllers\Public\ProductController;
 use App\Http\Controllers\Public\BlogController;
 use App\Http\Controllers\Public\NewsletterController;
 
-Route::view('private-panel', 'dashboard')
+Route::view('mi-panel', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
 Route::view('profile', 'profile')
-    ->middleware(['auth'])
+    ->middleware(['auth', 'verified'])
     ->name('profile');
 
 
@@ -43,5 +44,15 @@ Route::get('/thankyou', [NewsletterController::class, 'thanks'])->name('thankyou
 
 Route::view('welcome', 'welcome');
 
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email'); //TODO CHANGE
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/mi-panel');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 
 require __DIR__.'/auth.php';

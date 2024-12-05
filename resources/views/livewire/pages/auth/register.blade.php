@@ -29,6 +29,7 @@ new #[Layout('layouts.guest')] class extends Component
         $validated['password'] = Hash::make($validated['password']);
 
         event(new Registered($user = User::create($validated)));
+        event(new \App\Events\UserRegisteredAsLead($user));
 
         Auth::login($user);
 
@@ -73,6 +74,12 @@ new #[Layout('layouts.guest')] class extends Component
                             name="password_confirmation" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
+        <!-- Subscription Notice -->
+        <div class="mt-6 mb-6">
+            <p class="text-sm text-gray-600">
+                {{ __('Al registrarte, aceptas formar parte de la lista de suscripción de Artesanos del Código y recibir nuestras comunicaciones. Puedes darte de baja en cualquier momento.') }}
+            </p>
         </div>
 
         <div class="flex items-center justify-end mt-4">

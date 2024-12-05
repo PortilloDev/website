@@ -22,7 +22,7 @@ class NewsletterService implements NewsletterServiceInterface
         try {
             $response = $this->client->lists->addListMember($this->listId, [
                 'email_address' => $email,
-                'status' => "pending",
+                'status' => "subscribed",
                 'merge_fields' => [
                     'FNAME' => $name,
                     'SOURCE' => $source,
