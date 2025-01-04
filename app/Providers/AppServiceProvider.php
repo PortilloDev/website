@@ -2,10 +2,17 @@
 
 namespace App\Providers;
 
+use App\Events\AuditEvent;
+use App\Events\UserRegisteredAsLead;
+use App\Listeners\AuditEventListener;
+use App\Listeners\RegisterUserAsLead;
+use App\Listeners\SendEmailVerificationNotification;
 use App\Service\LeadsService\LeadsRegisterService;
 use App\Service\LeadsService\LeadsRegisterServiceInterface;
 use App\Service\NeswletterService\NewsletterService;
 use App\Service\NeswletterService\NewsletterServiceInterface;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,6 +31,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Event::listen(
+            UserRegisteredAsLead::class,
+            RegisterUserAsLead::class
+        );
+        Event::listen(
+            Registered::class,
+            SendEmailVerificationNotification::class
+        );
+        Event::listen(
+            AuditEvent::class,
+            AuditEventListener::class
+        );
     }
 }

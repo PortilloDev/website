@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'log'),
-
+    'default' => env('MAIL_MAILER', 'smtp'),
+    'admin_email' => env('ADMIN_EMAIL'),
     /*
     |--------------------------------------------------------------------------
     | Mailer Configurations
@@ -95,6 +95,9 @@ return [
             ],
         ],
 
+        'mailgun' => [
+            'transport' => 'mailgun'
+        ],
     ],
 
     /*

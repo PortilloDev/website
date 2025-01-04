@@ -12,6 +12,7 @@ $maxWidth = [
     'xl' => 'sm:max-w-xl',
     '2xl' => 'sm:max-w-2xl',
 ][$maxWidth];
+$show = false;
 @endphp
 
 <div

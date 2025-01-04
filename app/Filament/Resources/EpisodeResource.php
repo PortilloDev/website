@@ -25,7 +25,7 @@ use TomatoPHP\FilamentDocs\Filament\Actions\DocumentAction;
 class EpisodeResource extends Resource
 {
     protected static ?string $model = Episode::class;
-
+    protected static ?string $navigationLabel = 'Episodios';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

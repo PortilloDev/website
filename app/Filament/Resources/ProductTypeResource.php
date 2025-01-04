@@ -19,7 +19,7 @@ use Illuminate\Support\Str;
 class ProductTypeResource extends Resource
 {
     protected static ?string $model = ProductType::class;
-
+    protected static ?string $navigationLabel = 'Tipos de Productos';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

@@ -3,10 +3,19 @@
     <div>
         <!-- Banner -->
         <section>
-            <img src="{{ asset('/storage/image/banner.png') }}" alt="Imagen principal" class="hero bg-cover bg-center">
+            <!-- Imagen ajustada -->
+            <div class="relative">
+                <img
+                    src="{{ asset('/storage/image/banner.png') }}"
+                    alt="Imagen principal"
+                    class="w-full max-h-[500px] object-cover bg-center">
+            </div>
+            <!-- Contenido sobre el banner -->
             <div class="container mx-auto text-center py-12 px-4">
                 <h2 class="text-4xl font-extrabold mb-4 text-black">Impulsa tu desarrollo</h2>
-                <p class="mb-3 text-gray-600 dark:text-gray-700 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">En Artesanos del Código, creemos que la pasión y la dedicación son las herramientas esenciales para convertirte en un verdadero maestro de la programación. Nuestra misión es compartir conocimientos y recursos que impulsen tu crecimiento profesional y te ayuden a alcanzar la excelencia en el desarrollo web.</p>
+                <p class="mb-3 text-gray-600 dark:text-gray-700 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-black first-letter:me-3 first-letter:float-start">
+                    En Artesanos del Código, creemos que la pasión y la dedicación son las herramientas esenciales para convertirte en un verdadero maestro de la programación. Nuestra misión es compartir conocimientos y recursos que impulsen tu crecimiento profesional y te ayuden a alcanzar la excelencia en el desarrollo web.
+                </p>
             </div>
         </section>
     </div>
@@ -24,8 +33,8 @@
             </div>
         </section>
         <!-- Sección Presentando el Podcast -->
-        <section class="text-center mb-6">
-            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+        <section class="text-center mb-6 w-3/4 container mx-auto">
+            <div class="flex flex-col md:flex-row items-center md:space-x-8  gap-8">
                 <div class="md:w-1/2 mb-8 md:mb-0">
                     <img src="{{asset('/storage/image/artesanos_info.png') }}" alt="Imagen de presentación" class="w-full h-auto rounded-lg shadow">
                 </div>
@@ -38,8 +47,8 @@
         </section>
 
         <!-- Sección Presentando Contenido de Marketing y Programación -->
-        <section class="text-center mb-12">
-            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+        <section class="text-center mb-6 w-3/4 container mx-auto">
+            <div class="flex flex-col md:flex-row items-center md:space-x-8  gap-8">
                 <div class="md:w-1/2 mb-8 md:mb-0">
                     <img src="{{asset('/storage/image/ebooks_info.png') }}" alt="Imagen de presentación" class="w-full h-auto rounded-lg shadow">
                 </div>
@@ -52,8 +61,8 @@
         </section>
 
         <!-- Sección Presentando Servicios -->
-        <section class="text-center mb-12">
-            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+        <section class="text-center mb-6 w-3/4 container mx-auto">
+            <div class="flex flex-col md:flex-row items-center md:space-x-8  gap-8">
                 <div class="md:w-1/2 mb-8 md:mb-0">
                     <img src="{{asset('/storage/image/service_info.png') }}" alt="Imagen de presentación" class="w-full h-auto rounded-lg shadow">
                 </div>

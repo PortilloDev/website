@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Public;
 
+use App\Events\AuditEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Public\CreateLeadRequest;
+use App\Models\AuditLog;
 use App\Service\LeadsService\LeadsRegisterService;
 use App\Service\LeadsService\LeadsRegisterServiceInterface;
 use App\Service\ProductService\ListProductsService;
@@ -55,7 +57,14 @@ class NewsletterController extends Controller
 
             }catch (\Exception $e){
                 $this->logger->error($e->getMessage());
-
+                event(new AuditEvent(
+                    AuditLog::TYPE_FAILED,
+                    'Error al añadir un suscriptor',
+                    null,
+                    request()->ip(),
+                    request()->userAgent(),
+                    ['message' => $e->getMessage()]
+                ));
                 return redirect()->back()->with('error', 'Hubo un problema con la suscripción. Por favor, inténtalo nuevamente.');
 
             }
