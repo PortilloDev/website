@@ -8,4 +8,6 @@ interface NewsletterServiceInterface
 
     public function existMember(string $email): bool|object;
 
+    public function ping(): mixed;
+
 }

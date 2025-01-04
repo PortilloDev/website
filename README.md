@@ -64,3 +64,27 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Get Started
+-----------
+
+This project requires PHP 8.2 or higher.
+
+### Installation
+
+You can install the framework and Composer dependencies / development tools by running the following command:
+
+```bash
+composer install
+chmod +x deploy.sh
+```
+
+You can also create a new Laravel project using the `create-project` Artisan command.
+
+```bash
+php artisan create-project laravel/laravel <project-name>
+```
+
+### Server Configuration
+
+Laravel uses the [Dotenv](https://github.com/vlucas/phpdotenv) PHP package to load a `.env` file in each project directory. You can create a basic `.env` file by copying the `.env.example` file provided with the Laravel framework.

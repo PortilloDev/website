@@ -28,9 +28,7 @@ new #[Layout('layouts.guest')] class extends Component
 
         $validated['password'] = Hash::make($validated['password']);
 
-        event(new Registered($user = User::create($validated)));
-        event(new \App\Events\UserRegisteredAsLead($user));
-
+        $user = (new \App\Service\UserService\CreateUserService())->__invoke($validated);
         Auth::login($user);
 
         $this->redirect(route('dashboard', absolute: false), navigate: true);

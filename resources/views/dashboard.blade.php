@@ -29,11 +29,19 @@ new class extends Component
 
         <!-- Panel Principal -->
         <div class="mb-12">
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">Inicio / Panel Principal</h2>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Panel Principal</h2>
             <div class="bg-white shadow-md rounded-lg p-6">
                 <p class="text-gray-600 mb-4">Bienvenido/a al Área Privada. Aquí encontrarás herramientas, recursos y novedades especialmente diseñadas para nuestros usuarios registrados.</p>
+            </div>
+        </div>
+        <!-- Panel Principal -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Nota Importante</h2>
+            <div class="bg-white shadow-md rounded-lg p-6">
                 <div class="bg-blue-100 text-blue-800 p-4 rounded-md mb-4">
-                    <strong>Notificación:</strong> No olvides revisar los nuevos recursos disponibles en la sección de documentos descargables.
+                    <strong>Notificación:</strong> En este momento estamos trabajando para mejorar la experiencia de usuario. Por favor, ten paciencia mientras trabajamos en añadir funcionalidades que te puedan ayudar a tu crecimiento dentro de nuestra web.
+                    <p class="mt-4">Según vayamos añadiendo nuevas funcionalidades, te iremos informando de ellas en este espacio, y mediante correo electrónico.</p>
+                    <p class="mt-4">Gracias por tu apoyo y paciencia.</p>
                 </div>
             </div>
         </div>
@@ -48,17 +56,35 @@ new class extends Component
                         <li><a href="{{route('profile')}}" class="text-blue-600 hover:underline">Mi cuenta</a></li>
                     </ul>
                     <ul class="list-disc list-inside text-gray-600">
+                        <li><a href="{{route('product')}}" class="text-blue-600 hover:underline">Recursos</a></li>
+                    </ul>
+                    <ul class="list-disc list-inside text-gray-600">
                         <li><button wire:click="logout" class="text-blue-600 hover:underline">Logout</button></li>
                     </ul>
                 </div>
             </div>
         </div>
+        <!-- Contacto  -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Contacto</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Documentos y Recursos Descargables -->
+                <div class="bg-white shadow-md rounded-lg p-4">
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li> <a href="mailto:contacto@notasweb.me" class="text-blue_button">Contacto</a></li>
+                    </ul>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li> <a href="https://www.linkedin.com/in/ivan-portillo-perez/" target="_blank" class="text-blue_button">Linkedin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentos y Recursos Descargables
         <div class="mb-12">
             <h2 class="text-2xl font-bold mb-4 text-gray-800">Documentos y Recursos Descargables</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Categoría: Tutoriales -->
+
                 <div class="bg-white shadow-md rounded-lg p-4">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Tutoriales</h3>
                     <ul class="list-disc list-inside text-gray-600">
@@ -66,7 +92,7 @@ new class extends Component
                         <li><a href="#" class="text-blue-600 hover:underline">Optimización SEO</a></li>
                     </ul>
                 </div>
-                <!-- Categoría: Formatos de contenido -->
+
                 <div class="bg-white shadow-md rounded-lg p-4">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Formatos de Contenido</h3>
                     <ul class="list-disc list-inside text-gray-600">
@@ -74,7 +100,7 @@ new class extends Component
                         <li><a href="#" class="text-blue-600 hover:underline">Recursos para campañas</a></li>
                     </ul>
                 </div>
-                <!-- Categoría: Recursos de Marketing -->
+
                 <div class="bg-white shadow-md rounded-lg p-4">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Recursos de Marketing</h3>
                     <ul class="list-disc list-inside text-gray-600">
@@ -84,12 +110,11 @@ new class extends Component
                 </div>
             </div>
         </div>
-
-        <!-- Formación Exclusiva -->
+        -->
+        <!-- Formación Exclusiva
         <div class="mb-12">
             <h2 class="text-2xl font-bold mb-4 text-gray-800">Formación Exclusiva</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Video -->
                 <div class="bg-white shadow-md rounded-lg p-4">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Vídeos</h3>
                     <video controls class="w-full rounded-md">
@@ -97,7 +122,8 @@ new class extends Component
                         Tu navegador no soporta la reproducción de videos.
                     </video>
                 </div>
-                <!-- Guías paso a paso -->
+        -->
+                <!-- Guías paso a paso
                 <div class="bg-white shadow-md rounded-lg p-4">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Guías Paso a Paso</h3>
                     <p class="text-gray-600 mb-4">Explora guías detalladas para optimizar tu trabajo en WordPress, IA y Marketing.</p>
@@ -105,8 +131,8 @@ new class extends Component
                 </div>
             </div>
         </div>
-
-        <!-- Soporte y FAQ -->
+-->
+        <!-- Soporte y FAQ
         <div class="mb-12">
             <h2 class="text-2xl font-bold mb-4 text-gray-800">Soporte y FAQ</h2>
             <div class="bg-white shadow-md rounded-lg p-6">
@@ -123,8 +149,8 @@ new class extends Component
                 </form>
             </div>
         </div>
-
-        <!-- Historial de Actividad -->
+-->
+        <!-- Historial de Actividad
         <div>
             <h2 class="text-2xl font-bold mb-4 text-gray-800">Historial de Actividad</h2>
             <div class="bg-white shadow-md rounded-lg p-6">
@@ -151,5 +177,6 @@ new class extends Component
                 </table>
             </div>
         </div>
+        -->
     </section>
 </x-app-layout>

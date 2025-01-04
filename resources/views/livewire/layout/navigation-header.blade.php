@@ -43,7 +43,7 @@ new class extends Component
       'isPublic' => true,
     ],
     [
-      'name' => 'Sobre Mi',
+      'name' => 'Detrás de Artesanos',
       'route' => route('about'),
       'active' => true,
       'isPublic' => true,

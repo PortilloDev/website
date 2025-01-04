@@ -12,13 +12,14 @@ class NewsletterService implements NewsletterServiceInterface
     {
         $this->client = new ApiClient();
         $this->client->setConfig([
-                'apiKey' => env('NEWSLETTER_API_KEY'),
-                'server' => env('MAILCHIMP_SERVER_PREFIX'),
+                'apiKey' => config('newsletter.driver_arguments.api_key'),
+                'server' => config('newsletter.driver_arguments.server'),
                 ]);
-        $this->listId = env('NEWSLETTER_LIST_ID');
+        $this->listId = config('newsletter.lists.subscribers.id');
     }
     public function addMemberToList(string $email, string $name, string $source, ?array $tags = []): array
     {
+
         try {
             $response = $this->client->lists->addListMember($this->listId, [
                 'email_address' => $email,
@@ -47,6 +48,18 @@ class NewsletterService implements NewsletterServiceInterface
             Log::error($e->getMessage());
             return false;
         }
+        return $response;
+    }
+
+    public function ping(): mixed
+    {
+        try {
+            $response = $this->client->ping->get();
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
+
         return $response;
     }
 }

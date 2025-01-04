@@ -14,7 +14,7 @@ return [
      */
     'driver_arguments' => [
         'api_key' => env('NEWSLETTER_API_KEY'),
-
+        'server' => env('MAILCHIMP_SERVER_PREFIX'),
         'endpoint' => env('NEWSLETTER_ENDPOINT'),
     ],
 

@@ -6,7 +6,9 @@ use App\Http\Controllers\Public\LegalController;
 use App\Http\Controllers\Public\PodcastController;
 use App\Http\Controllers\Public\PromotionController;
 use App\Http\Controllers\Public\ServiceController;
+use App\Mail\EmailContact;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Public\HomeController;
 use App\Http\Controllers\Public\ProductController;
@@ -16,7 +18,7 @@ use App\Http\Controllers\Public\NewsletterController;
 Route::view('mi-panel', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
-
+Route::get('/productos/{slug}', [ProductController::class, 'show'])->middleware(['auth', 'verified'])->name('product_show');
 Route::view('profile', 'profile')
     ->middleware(['auth', 'verified'])
     ->name('profile');
@@ -26,7 +28,6 @@ Route::view('profile', 'profile')
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/sobre-mi', [AboutController::class, 'index'])->name('about');
 Route::get('/productos', [ProductController::class, 'index'])->name('product');
-Route::get('/productos/{slug}', [ProductController::class, 'show'])->name('product_show');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::post('/contacto/enviar', [ContactController::class, 'register'])->name('contact_register');
 Route::get('/podcast', [PodcastController::class, 'index'])->name('podcast');
@@ -56,3 +57,11 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 require __DIR__.'/auth.php';
+
+Route::get('/mailchimp-ping', function () {
+    try{
+        return (new \App\Service\NeswletterService\NewsletterService())->ping();
+    }catch (\Exception $e) {
+        return $e->getMessage();
+    }
+});

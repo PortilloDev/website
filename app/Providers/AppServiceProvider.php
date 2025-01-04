@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\AuditEvent;
 use App\Events\UserRegisteredAsLead;
+use App\Listeners\AuditEventListener;
 use App\Listeners\RegisterUserAsLead;
 use App\Listeners\SendEmailVerificationNotification;
 use App\Service\LeadsService\LeadsRegisterService;
@@ -36,6 +38,10 @@ class AppServiceProvider extends ServiceProvider
         Event::listen(
             Registered::class,
             SendEmailVerificationNotification::class
+        );
+        Event::listen(
+            AuditEvent::class,
+            AuditEventListener::class
         );
     }
 }

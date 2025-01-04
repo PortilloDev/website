@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
-use App\Models\User;
+use App\Filament\Resources\AuditLogResource\Pages;
+use App\Filament\Resources\AuditLogResource\RelationManagers;
+use App\Models\AuditLog;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,10 +13,10 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class UserResource extends Resource
+class AuditLogResource extends Resource
 {
-    protected static ?string $model = User::class;
-    protected static ?string $navigationLabel = 'Usuarios';
+    protected static ?string $model = AuditLog::class;
+    protected static ?string $navigationLabel = 'Auditoría';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -31,16 +31,17 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('email_verified_at'),
+                Tables\Columns\TextColumn::make('event_type')->label('Tipo de evento')->searchable(),
+                Tables\Columns\TextColumn::make('user.email')->label('Usuario')->searchable(),
+                Tables\Columns\TextColumn::make('ip_address')->label('IP'),
+                Tables\Columns\TextColumn::make('user_agent')->label('User Agent'),
+                Tables\Columns\TextColumn::make('properties')->label('properties'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -59,9 +60,9 @@ class UserResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListUsers::route('/'),
-            'create' => Pages\CreateUser::route('/create'),
-            'edit' => Pages\EditUser::route('/{record}/edit'),
+            'index' => Pages\ListAuditLogs::route('/'),
+            'create' => Pages\CreateAuditLog::route('/create'),
+            'edit' => Pages\EditAuditLog::route('/{record}/edit'),
         ];
     }
 }

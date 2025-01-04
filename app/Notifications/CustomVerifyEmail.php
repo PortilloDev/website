@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\URL;
 
 class CustomVerifyEmail extends Notification
 {
@@ -46,10 +47,10 @@ class CustomVerifyEmail extends Notification
 
     protected function verificationUrl($notifiable): \Illuminate\Foundation\Application|string|\Illuminate\Contracts\Routing\UrlGenerator
     {
-        return url(route('verification.verify', [
+        return  URL::signedRoute('verification.verify', [
             'id' => $notifiable->getKey(),
-            'hash' => sha1($notifiable->getEmailForVerification()),
-        ], false));
+            'hash' => sha1($notifiable->getEmailForVerification())
+        ]);
     }
 
     /**
