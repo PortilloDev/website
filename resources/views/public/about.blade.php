@@ -1,12 +1,8 @@
 <x-app-layout>
-    <!-- Banner de ancho completo -->
-    <section class="bg-white shadow p-6 rounded-lg text-center mb-12">
-        <div class="text-black text-center">
-            <h1 class="text-4xl font-bold">Apasionado por el Código</h1>
-            <h2 class="text-3xl font-bold"> Comprometido con la Excelencia</h2>
-            <p class="text-lg mt-2">Nunca es tarde para empezar a construir tus sueños y alcanzar nuevas metas.</p>
-        </div>
-    </section>
+    <x-hero :background="asset('/storage/image/learn_artesanos.webp')"
+        :title="'Apasionado por el Código'"
+        :subtitle="'Comprometido con la Excelencia. Nunca es tarde para empezar a construir tus sueños y alcanzar nuevas metas.'"
+    />
 
     <!-- Página Sobre Nosotros -->
     <main class="container mx-auto py-12 px-4">

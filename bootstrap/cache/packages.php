@@ -1,0 +1,210 @@
+<?php return array (
+  'anourvalar/eloquent-serialize' => 
+  array (
+    'aliases' => 
+    array (
+      'EloquentSerialize' => 'AnourValar\\EloquentSerialize\\Facades\\EloquentSerializeFacade',
+    ),
+  ),
+  'awcodes/filament-tiptap-editor' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'FilamentTiptapEditor\\FilamentTiptapEditorServiceProvider',
+    ),
+  ),
+  'blade-ui-kit/blade-heroicons' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'BladeUI\\Heroicons\\BladeHeroiconsServiceProvider',
+    ),
+  ),
+  'blade-ui-kit/blade-icons' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'BladeUI\\Icons\\BladeIconsServiceProvider',
+    ),
+  ),
+  'filament/actions' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Filament\\Actions\\ActionsServiceProvider',
+    ),
+  ),
+  'filament/filament' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Filament\\FilamentServiceProvider',
+    ),
+  ),
+  'filament/forms' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Filament\\Forms\\FormsServiceProvider',
+    ),
+  ),
+  'filament/infolists' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Filament\\Infolists\\InfolistsServiceProvider',
+    ),
+  ),
+  'filament/notifications' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Filament\\Notifications\\NotificationsServiceProvider',
+    ),
+  ),
+  'filament/support' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Filament\\Support\\SupportServiceProvider',
+    ),
+  ),
+  'filament/tables' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Filament\\Tables\\TablesServiceProvider',
+    ),
+  ),
+  'filament/widgets' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Filament\\Widgets\\WidgetsServiceProvider',
+    ),
+  ),
+  'kirschbaum-development/eloquent-power-joins' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Kirschbaum\\PowerJoins\\PowerJoinsServiceProvider',
+    ),
+  ),
+  'laravel/breeze' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Breeze\\BreezeServiceProvider',
+    ),
+  ),
+  'laravel/sail' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Sail\\SailServiceProvider',
+    ),
+  ),
+  'laravel/tinker' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    ),
+  ),
+  'livewire/livewire' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Livewire\\LivewireServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Livewire' => 'Livewire\\Livewire',
+    ),
+  ),
+  'livewire/volt' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Livewire\\Volt\\VoltServiceProvider',
+    ),
+  ),
+  'nesbot/carbon' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Carbon\\Laravel\\ServiceProvider',
+    ),
+  ),
+  'nunomaduro/collision' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    ),
+  ),
+  'nunomaduro/termwind' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Termwind\\Laravel\\TermwindServiceProvider',
+    ),
+  ),
+  'ryangjchandler/blade-capture-directive' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'RyanChandler\\BladeCaptureDirective\\BladeCaptureDirectiveServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'BladeCaptureDirective' => 'RyanChandler\\BladeCaptureDirective\\Facades\\BladeCaptureDirective',
+    ),
+  ),
+  'spatie/laravel-cookie-consent' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\CookieConsent\\CookieConsentServiceProvider',
+    ),
+  ),
+  'spatie/laravel-medialibrary' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\MediaLibrary\\MediaLibraryServiceProvider',
+    ),
+  ),
+  'spatie/laravel-newsletter' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\Newsletter\\NewsletterServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Newsletter' => 'Spatie\\Newsletter\\Facades\\Newsletter',
+    ),
+  ),
+  'tomatophp/console-helpers' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'TomatoPHP\\ConsoleHelpers\\ConsoleHelpersServiceProvider',
+    ),
+  ),
+  'tomatophp/filament-docs' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'TomatoPHP\\FilamentDocs\\FilamentDocsServiceProvider',
+    ),
+  ),
+  'tomatophp/filament-icons' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'TomatoPHP\\FilamentIcons\\FilamentIconsServiceProvider',
+    ),
+  ),
+);
